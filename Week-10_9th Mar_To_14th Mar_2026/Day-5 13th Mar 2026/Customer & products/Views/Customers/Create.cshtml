@@ -1,0 +1,21 @@
+﻿@model Customer
+
+<h2>Create Customer</h2>
+
+<form asp-action="Create">
+
+    <div>
+        <label>Name</label>
+        <input asp-for="Name" />
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" />
+    </div>
+
+    <br />
+
+    <button type="submit">Save</button>
+
+</form>

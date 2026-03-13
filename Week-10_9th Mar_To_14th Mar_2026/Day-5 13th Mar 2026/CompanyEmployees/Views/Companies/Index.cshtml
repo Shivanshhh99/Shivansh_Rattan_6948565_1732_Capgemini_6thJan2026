@@ -1,0 +1,23 @@
+﻿@model List<CompanyEmployees.Models.Company>
+
+<h2>Companies</h2>
+
+<a asp-action="Create">Add Company</a> |
+<a asp-controller="Employees" asp-action="Create">Add Employee</a>
+
+<hr />
+
+@foreach (var company in Model)
+{
+    <h3>@company.CompanyName (@company.Location)</h3>
+
+    <ul>
+        @foreach (var emp in company.employees)
+        {
+            <li>
+                @emp.Name - @emp.Designation (Age: @emp.Age)
+            </li>
+        }
+    </ul>
+
+}

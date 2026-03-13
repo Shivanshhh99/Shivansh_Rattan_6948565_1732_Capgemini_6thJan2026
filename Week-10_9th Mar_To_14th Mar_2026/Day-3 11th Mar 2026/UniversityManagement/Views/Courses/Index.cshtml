@@ -1,0 +1,22 @@
+﻿@model IEnumerable<UniversityManagementSystem.Models.Course>
+
+<h2>Courses</h2>
+
+<a asp-action="Create">Add Course</a>
+
+<table border="1">
+
+    <tr>
+        <th>Title</th>
+        <th>Credits</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.Credits</td>
+        </tr>
+    }
+
+</table>

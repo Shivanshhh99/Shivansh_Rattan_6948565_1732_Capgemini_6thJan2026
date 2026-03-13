@@ -1,0 +1,35 @@
+﻿@model CompanyEmployees.Models.EmployeeModel
+
+<h2>Add Employee</h2>
+
+<form asp-action="Create">
+
+    <label>Name</label>
+    <input asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+
+    <br />
+
+    <label>Age</label>
+    <input asp-for="Age" />
+
+    <br />
+
+    <label>Designation</label>
+    <input asp-for="Designation" />
+
+    <br />
+
+    <label>Company</label>
+    <select asp-for="CompanyId" asp-items="ViewBag.CompanyId"></select>
+
+    <br /><br />
+
+    <button type="submit">Save</button>
+
+</form>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
