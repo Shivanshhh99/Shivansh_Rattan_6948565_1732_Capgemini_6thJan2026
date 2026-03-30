@@ -1,0 +1,50 @@
+﻿@model List<StudentPortal.Models.Student>
+
+@{
+    ViewData["Title"] = "All Students";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-4 rounded-4">
+
+        <h2 class="text-center text-primary mb-4">All Registered Students</h2>
+
+        @if (Model.Count == 0)
+        {
+            <div class="alert alert-warning text-center">
+                No students registered yet.
+            </div>
+        }
+        else
+        {
+            <table class="table table-hover table-bordered text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var student in Model)
+                    {
+                        <tr>
+                            <td>@student.Id</td>
+                            <td>@student.Name</td>
+                            <td>@student.Age</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+
+        <div class="text-center mt-3">
+            <a asp-action="Register" class="btn btn-primary">
+                Add New Student
+            </a>
+        </div>
+
+    </div>
+</div>

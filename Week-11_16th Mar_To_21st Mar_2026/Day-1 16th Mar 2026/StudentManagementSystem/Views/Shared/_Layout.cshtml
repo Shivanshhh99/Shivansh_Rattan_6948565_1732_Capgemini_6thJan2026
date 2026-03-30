@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] — SMS Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="brand-icon">◈</span>
+            <span class="brand-text">SMS Portal</span>
+        </div>
+        <div class="nav-links">
+            <a href="/Account/Dashboard" class="nav-link">Dashboard</a>
+            <a href="/Student/Register" class="nav-link">Register Student</a>
+            <a href="/Student/List" class="nav-link">Students</a>
+            <a href="/Product/Index" class="nav-link">Products</a>
+            <a href="/Account/Logout" class="nav-link nav-logout">Logout</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div class="alert alert-success">
+                <span class="alert-icon">✓</span>
+                @TempData["SuccessMessage"]
+            </div>
+        }
+
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <span>© 2025 Student Management System · Built with ASP.NET Core MVC</span>
+    </footer>
+</body>
+</html>

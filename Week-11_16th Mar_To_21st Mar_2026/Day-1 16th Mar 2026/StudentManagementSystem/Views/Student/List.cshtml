@@ -1,0 +1,52 @@
+﻿@model List<StudentManagementSystem.Models.Student>
+@{
+    ViewData["Title"] = "All Students";
+}
+
+<div class="page-header" style="display:flex;align-items:center;justify-content:space-between;">
+    <div>
+        <h1 class="page-title">All Students</h1>
+        <p class="page-subtitle">@Model.Count student(s) registered</p>
+    </div>
+    <a href="/Student/Register" class="btn btn-primary">+ Register Student</a>
+</div>
+
+@if (Model.Count == 0)
+{
+    <div class="card" style="text-align:center;padding:3rem;">
+        <p style="color:var(--text-secondary);font-size:1.1rem;">No students registered yet.</p>
+        <a href="/Student/Register" class="btn btn-primary" style="margin-top:1rem;">Register First Student</a>
+    </div>
+}
+else
+{
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Registered</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var s in Model)
+                {
+                    <tr>
+                        <td><span class="badge badge-purple">#@s.Id.ToString("D4")</span></td>
+                        <td style="font-weight:500;">@s.Name</td>
+                        <td>@s.Age</td>
+                        <td style="color:var(--text-secondary);">@s.Email</td>
+                        <td><span class="badge badge-orange">@s.Course</span></td>
+                        <td style="color:var(--text-secondary);font-size:0.8rem;">@s.RegisteredOn.ToString("MMM dd, yyyy")</td>
+                        <td><a href="/Student/Details/@s.Id" class="btn btn-secondary btn-sm">View</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

@@ -1,0 +1,37 @@
+@model ECommerceOMS.Models.Order
+@{ ViewData["Title"] = "Delete Order"; }
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow border-danger">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0"><i class="bi bi-exclamation-triangle"></i> Delete Order</h4>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-danger">
+                    Are you sure you want to delete Order <strong>#@Model.Id</strong>?
+                    This will also delete all order items and shipping details.
+                </div>
+                <table class="table table-borderless">
+                    <tr><td class="fw-bold">Order #:</td><td>@Model.Id</td></tr>
+                    <tr><td class="fw-bold">Customer:</td><td>@Model.Customer?.FullName</td></tr>
+                    <tr><td class="fw-bold">Date:</td><td>@Model.OrderDate.ToString("dd MMM yyyy")</td></tr>
+                    <tr><td class="fw-bold">Total:</td><td>₹@Model.TotalAmount.ToString("N2")</td></tr>
+                    <tr><td class="fw-bold">Status:</td><td>@Model.Status</td></tr>
+                </table>
+                <form asp-action="Delete" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" asp-for="Id" />
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-danger">
+                            <i class="bi bi-trash"></i> Yes, Delete
+                        </button>
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-x-circle"></i> Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

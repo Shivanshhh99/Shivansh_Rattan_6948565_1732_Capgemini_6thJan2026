@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "qpaSp1soOkY=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-12_23rd Mar_To_28th Mar_2026\\Day-3 25th Mar 2026\\ProductSolution\\ProductApi\\ProductApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\shiva\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.3\\microsoft.aspnetcore.openapi.10.0.3.nupkg.sha512",
+    "C:\\Users\\shiva\\.nuget\\packages\\microsoft.extensions.apidescription.server\\10.0.0\\microsoft.extensions.apidescription.server.10.0.0.nupkg.sha512",
+    "C:\\Users\\shiva\\.nuget\\packages\\microsoft.openapi\\2.4.1\\microsoft.openapi.2.4.1.nupkg.sha512",
+    "C:\\Users\\shiva\\.nuget\\packages\\swashbuckle.aspnetcore\\10.1.6\\swashbuckle.aspnetcore.10.1.6.nupkg.sha512",
+    "C:\\Users\\shiva\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\10.1.6\\swashbuckle.aspnetcore.swagger.10.1.6.nupkg.sha512",
+    "C:\\Users\\shiva\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\10.1.6\\swashbuckle.aspnetcore.swaggergen.10.1.6.nupkg.sha512",
+    "C:\\Users\\shiva\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\10.1.6\\swashbuckle.aspnetcore.swaggerui.10.1.6.nupkg.sha512"
+  ],
+  "logs": []
+}

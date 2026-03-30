@@ -1,0 +1,35 @@
+@model ECommerceOMS.Models.Product
+@{ ViewData["Title"] = "Delete Product"; }
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow border-danger">
+            <div class="card-header bg-danger text-white">
+                <h4 class="mb-0"><i class="bi bi-exclamation-triangle"></i> Delete Product</h4>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-danger">
+                    Are you sure you want to delete this product?
+                </div>
+                <table class="table table-borderless">
+                    <tr><td class="fw-bold">Name:</td><td>@Model.Name</td></tr>
+                    <tr><td class="fw-bold">Price:</td><td>₹@Model.Price.ToString("N2")</td></tr>
+                    <tr><td class="fw-bold">Category:</td><td>@Model.Category?.Name</td></tr>
+                    <tr><td class="fw-bold">Stock:</td><td>@Model.StockQuantity units</td></tr>
+                </table>
+                <form asp-action="Delete" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" asp-for="Id" />
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-danger">
+                            <i class="bi bi-trash"></i> Yes, Delete
+                        </button>
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-x-circle"></i> Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

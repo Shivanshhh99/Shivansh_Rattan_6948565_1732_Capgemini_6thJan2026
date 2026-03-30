@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Error";
+    var msg = ViewData["ErrorMessage"]?.ToString() ?? "An unexpected error occurred.";
+    var src = ViewData["ErrorSource"]?.ToString() ?? "Unknown";
+}
+
+<div class="error-page">
+    <div class="card error-card">
+        <div class="error-code">500</div>
+        <div class="error-title">Something went wrong</div>
+        <p style="color:var(--text-2);font-size:0.875rem;">
+            Caught gracefully by <strong style="color:var(--teal)">CustomExceptionFilter</strong>.
+            The error has been logged.
+        </p>
+        <div class="error-detail">
+            <strong>Source:</strong> @src<br />
+            <strong>Message:</strong> @msg
+        </div>
+        <div style="display:flex;gap:0.75rem;justify-content:center;">
+            <a href="/Account/Dashboard" class="btn btn-primary">← Dashboard</a>
+            <a href="/HR/Reports" class="btn btn-ghost">Retry Reports</a>
+        </div>
+    </div>
+</div>
