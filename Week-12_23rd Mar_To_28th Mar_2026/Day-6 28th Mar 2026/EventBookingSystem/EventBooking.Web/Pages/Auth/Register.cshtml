@@ -1,0 +1,127 @@
+@page
+@model EventBooking.Web.Pages.Auth.RegisterModel
+@{ ViewData["Title"] = "Register"; }
+
+<div class="container">
+  <div class="auth-card card mx-auto">
+    <div class="text-center mb-4">
+      <i class="bi bi-person-plus-fill display-5 text-primary"></i>
+      <h2 class="fw-bold mt-2">Create account</h2>
+      <p class="text-muted">Start booking amazing events</p>
+    </div>
+
+    <div id="errorMsg" class="alert alert-danger d-none"></div>
+
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Full Name</label>
+      <input type="text" id="fullName" class="form-control" placeholder="Raj Kumar" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Email</label>
+      <input type="email" id="email" class="form-control" placeholder="raj@example.com" required>
+      <div class="invalid-feedback">Please enter a valid email.</div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Password</label>
+      <div class="input-group">
+        <input type="password" id="password" class="form-control"
+               placeholder="Min 6 characters" required oninput="checkStrength()">
+        <button class="btn btn-outline-secondary" type="button"
+                onclick="togglePwd(this)"><i class="bi bi-eye"></i></button>
+      </div>
+      <div class="progress mt-2" style="height:4px">
+        <div id="strengthBar" class="progress-bar" style="width:0"></div>
+      </div>
+      <small id="strengthText" class="text-muted"></small>
+    </div>
+    <div class="mb-4">
+      <label class="form-label fw-semibold">Confirm Password</label>
+      <input type="password" id="confirmPassword" class="form-control"
+             placeholder="Repeat password" required>
+    </div>
+
+    <button class="btn btn-primary w-100 rounded-pill py-2 fw-semibold"
+            id="registerBtn" onclick="doRegister()">Create Account</button>
+    <p class="text-center mt-3 text-muted small">
+      Already have an account? <a href="/Auth/Login" class="text-primary fw-semibold">Sign In</a>
+    </p>
+  </div>
+</div>
+
+@section Scripts {
+<script>
+function checkStrength() {
+  const val = document.getElementById('password').value;
+  const bar = document.getElementById('strengthBar');
+  const txt = document.getElementById('strengthText');
+  let score = 0;
+  if (val.length >= 6) score++;
+  if (val.length >= 10) score++;
+  if (/[A-Z]/.test(val)) score++;
+  if (/[0-9]/.test(val)) score++;
+  if (/[^A-Za-z0-9]/.test(val)) score++;
+
+  const levels = ['', 'Very weak', 'Weak', 'Fair', 'Strong', 'Very strong'];
+  const colors = ['', 'bg-danger', 'bg-warning', 'bg-info', 'bg-success', 'bg-success'];
+  bar.style.width = (score * 20) + '%';
+  bar.className = 'progress-bar ' + (colors[score] || '');
+  txt.textContent = levels[score] || '';
+}
+
+async function doRegister() {
+  const fullName = document.getElementById('fullName').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const confirm = document.getElementById('confirmPassword').value;
+  const err = document.getElementById('errorMsg');
+  const btn = document.getElementById('registerBtn');
+
+  err.classList.add('d-none');
+
+  if (!fullName || !email || !password) {
+    err.textContent = 'All fields are required.'; err.classList.remove('d-none'); return;
+  }
+  if (password !== confirm) {
+    err.textContent = 'Passwords do not match.'; err.classList.remove('d-none'); return;
+  }
+  if (password.length < 6) {
+    err.textContent = 'Password must be at least 6 characters.'; err.classList.remove('d-none'); return;
+  }
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Creating account...';
+
+  try {
+    const resp = await apiFetch('/api/auth/register', {
+      method: 'POST',
+      body: JSON.stringify({ fullName, email, password })
+    });
+    const data = await resp.json();
+
+    if (resp.ok) {
+      saveAuth(data);
+      showToast('Account created! Welcome to EventHub 🎉', 'success');
+      setTimeout(() => window.location.href = '/Events', 1000);
+    } else {
+      const errs = data.errors ? Object.values(data.errors).flat().join(' ') : data.title || 'Registration failed.';
+      err.textContent = errs;
+      err.classList.remove('d-none');
+      btn.disabled = false;
+      btn.textContent = 'Create Account';
+    }
+  } catch (e) {
+    err.textContent = 'Connection error. Is the API running?';
+    err.classList.remove('d-none');
+    btn.disabled = false;
+    btn.textContent = 'Create Account';
+  }
+}
+
+function togglePwd(btn) {
+  const input = btn.previousElementSibling;
+  const isText = input.type === 'text';
+  input.type = isText ? 'password' : 'text';
+  btn.innerHTML = `<i class="bi bi-eye${isText ? '' : '-slash'}"></i>`;
+}
+</script>
+}

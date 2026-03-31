@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+    <header class="app-header">
+      <h1 class="app-title">
+        <span class="title-icon">✔</span> Today's Tasks
+      </h1>
+      <p class="subtitle">Stay focused. Get things done.</p>
+    </header>
+
+    <div class="input-row">
+      <input
+        type="text"
+        id="taskInput"
+        class="task-input"
+        placeholder="Add a new task..."
+        onkeydown="handleKeyDown(event)"
+        maxlength="80"
+      />
+      <button class="add-btn" onclick="addTask()">Add</button>
+    </div>
+
+    <div class="stats-row">
+      <span id="totalCount">0 tasks</span>
+      <span id="doneCount">0 done</span>
+    </div>
+
+    <ul class="task-list" id="taskList">
+      <!-- Tasks inserted here -->
+    </ul>
+
+    <div class="empty-state" id="emptyState">
+      <span class="empty-icon">📋</span>
+      <p>Your list is empty. Add something!</p>
+    </div>
+
+    <div class="footer-actions">
+      <button class="clear-btn" onclick="clearAll()">🗑 Clear All</button>
+      <button class="clear-done-btn" onclick="clearDone()">✓ Clear Done</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

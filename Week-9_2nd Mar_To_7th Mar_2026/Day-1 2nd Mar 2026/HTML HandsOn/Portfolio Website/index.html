@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio — Shivansh Rattan</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">Shivansh Rattan</div>
+
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hero" onclick="closeMenu()">Home</a></li>
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="hero">
+  <div class="hero-text">
+    <div class="hero-tag">Available for hire</div>
+    <h1>Full-Stack<br/><span>Developer</span><br/>&amp; Designer</h1>
+    <p>I craft clean, performant web experiences with a focus on accessibility and elegant interaction design.</p>
+    <a href="#projects" class="btn">View My Work</a>
+  </div>
+
+  <div class="hero-image">
+    <div class="avatar-placeholder">👤</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">// about me</div>
+    <h2 class="section-title">Who I Am</h2>
+
+    <div class="about-grid">
+      <div>
+        <p>
+          I'm a full-stack developer with 4+ years of experience building web applications.
+        </p>
+      </div>
+
+      <div>
+        <p>Technologies I work with:</p>
+        <div class="skills">
+          <span class="skill-tag">HTML & CSS</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">C#</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="section-label">// projects</div>
+  <h2 class="section-title">My Work</h2>
+
+  <div class="projects-grid">
+    <div class="card">
+      <div class="card-thumb">🌿</div>
+      <div class="card-body">
+        <div class="card-tag">Web App</div>
+        <h3>GreenTracker</h3>
+        <p>Carbon footprint tracker app.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-thumb">🔴</div>
+      <div class="card-body">
+        <div class="card-tag">Dashboard</div>
+        <h3>AnalyticsHub</h3>
+        <p>Real-time analytics dashboard.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-thumb">🔵</div>
+      <div class="card-body">
+        <div class="card-tag">Mobile-first</div>
+        <h3>TaskFlow</h3>
+        <p>Minimal productivity app.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <p>Get in touch → <a href="mailto:alex@example.com">shivanshrattan.work@gmail.com</a></p>
+  <p>© 2026 Shivansh Rattan</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('navLinks').classList.remove('open');
+  }
+</script>
+
+</body>
+</html>

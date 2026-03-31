@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login & Register</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page-title">
+  <h1>Welcome Back</h1>
+  <p>Sign in to your account or create a new one</p>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('login')">Login</button>
+  <button class="tab-btn" onclick="switchTab('register')">Register</button>
+</div>
+
+<div class="card">
+
+  <!-- LOGIN -->
+  <div class="form-section active" id="loginForm">
+    <div class="form-head">
+      <h2>Sign In</h2>
+      <p>Enter your credentials</p>
+    </div>
+
+    <form onsubmit="handleLogin(event)">
+      <div class="form-group">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" required/>
+      </div>
+
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <div class="pw-wrap">
+          <input type="password" id="loginPassword" required/>
+          <button type="button" class="pw-toggle"
+                  onclick="togglePw('loginPassword', this)">👁</button>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-submit">Sign In</button>
+      <div class="success-msg" id="loginSuccess">
+        ✅ Logged in successfully!
+      </div>
+    </form>
+  </div>
+
+  <!-- REGISTER -->
+  <div class="form-section" id="registerForm">
+    <div class="form-head">
+      <h2>Create Account</h2>
+    </div>
+
+    <form onsubmit="handleRegister(event)">
+
+      <div class="form-group">
+        <label for="regUsername">Full Name</label>
+        <input type="text" id="regUsername" required/>
+      </div>
+
+      <div class="form-group">
+        <label for="regEmail">Email</label>
+        <input type="email" id="regEmail" required/>
+      </div>
+
+      <div class="form-group">
+        <label for="regPassword">Password</label>
+        <div class="pw-wrap">
+          <input type="password" id="regPassword"
+                 oninput="checkStrength(this.value)" required/>
+          <button type="button" class="pw-toggle"
+                  onclick="togglePw('regPassword', this)">👁</button>
+        </div>
+
+        <div class="strength-bar">
+          <div class="strength-fill" id="strengthFill"></div>
+        </div>
+        <div class="strength-text" id="strengthText">
+          Enter a password
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="regConfirm">Confirm Password</label>
+        <input type="password" id="regConfirm" required/>
+      </div>
+
+      <button type="submit" class="btn-submit">Create Account</button>
+      <div class="success-msg" id="registerSuccess">
+        🎉 Account created!
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<script>
+function switchTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach((b,i)=>
+    b.classList.toggle('active', (tab==='login'?i===0:i===1)));
+  document.getElementById('loginForm')
+    .classList.toggle('active', tab==='login');
+  document.getElementById('registerForm')
+    .classList.toggle('active', tab==='register');
+}
+
+function togglePw(id, btn) {
+  const inp=document.getElementById(id);
+  inp.type=inp.type==='password'?'text':'password';
+  btn.textContent=inp.type==='password'?'👁':'🙈';
+}
+
+function checkStrength(pw){
+  const fill=document.getElementById('strengthFill');
+  const text=document.getElementById('strengthText');
+  let score=0;
+  if(pw.length>=8)score++;
+  if(/[A-Z]/.test(pw))score++;
+  if(/[0-9]/.test(pw))score++;
+  if(/[^A-Za-z0-9]/.test(pw))score++;
+
+  const map=[
+    {w:'0%',bg:'transparent',label:'Enter a password'},
+    {w:'25%',bg:'#ef4444',label:'Weak'},
+    {w:'50%',bg:'#f97316',label:'Fair'},
+    {w:'75%',bg:'#eab308',label:'Good'},
+    {w:'100%',bg:'#22c55e',label:'Strong 💪'}
+  ];
+
+  fill.style.width=map[score].w;
+  fill.style.background=map[score].bg;
+  text.textContent=map[score].label;
+}
+
+function handleLogin(e){
+  e.preventDefault();
+  const msg=document.getElementById('loginSuccess');
+  msg.style.display='block';
+  setTimeout(()=>msg.style.display='none',3000);
+}
+
+function handleRegister(e){
+  e.preventDefault();
+  const pw=document.getElementById('regPassword').value;
+  const cpw=document.getElementById('regConfirm').value;
+  if(pw!==cpw){alert('Passwords do not match!');return;}
+  const msg=document.getElementById('registerSuccess');
+  msg.style.display='block';
+  setTimeout(()=>{msg.style.display='none';
+  switchTab('login');},2500);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="confetti-area" id="confetti"></div>
+
+    <div class="card-inner">
+      <div class="emoji">🎂</div>
+      <h1 class="heading">Happy Birthday!</h1>
+      <p class="message">
+        May your day be filled with sunshine, laughter, and everything wonderful. 
+        You deserve all the happiness in the world! 🎉
+      </p>
+
+      <button class="surprise-btn" id="surpriseBtn" onclick="revealSurprise()">
+        🎁 Open Your Surprise!
+      </button>
+
+      <div class="surprise-box" id="surpriseBox">
+        <p class="surprise-text">✨ Wishing you lots of joy! ✨</p>
+      </div>
+    </div>
+
+    <div class="balloons">
+      <span class="balloon" style="--clr:#FF6B6B; --delay:0s;">🎈</span>
+      <span class="balloon" style="--clr:#FFD93D; --delay:0.4s;">🎈</span>
+      <span class="balloon" style="--clr:#6BCB77; --delay:0.8s;">🎈</span>
+      <span class="balloon" style="--clr:#4D96FF; --delay:1.2s;">🎈</span>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
