@@ -1,0 +1,143 @@
+@model ECommerceOMS.ViewModels.DashboardViewModel
+@{ ViewData["Title"] = "Admin Dashboard"; }
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="bi bi-speedometer2"></i> Admin Dashboard</h2>
+    <a asp-action="Logout" class="btn btn-outline-danger btn-sm">
+        <i class="bi bi-box-arrow-right"></i> Logout
+    </a>
+</div>
+
+<!-- KPI Cards -->
+<div class="row g-3 mb-4">
+    <div class="col-md-3">
+        <div class="card text-white bg-primary shadow">
+            <div class="card-body text-center">
+                <i class="bi bi-cart3 fs-2"></i>
+                <h3>@Model.TotalOrders</h3>
+                <p class="mb-0">Total Orders</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-success shadow">
+            <div class="card-body text-center">
+                <i class="bi bi-currency-rupee fs-2"></i>
+                <h3>₹@Model.TotalRevenue.ToString("N0")</h3>
+                <p class="mb-0">Total Revenue</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-warning shadow">
+            <div class="card-body text-center">
+                <i class="bi bi-people fs-2"></i>
+                <h3>@Model.TotalCustomers</h3>
+                <p class="mb-0">Customers</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-danger shadow">
+            <div class="card-body text-center">
+                <i class="bi bi-box-seam fs-2"></i>
+                <h3>@Model.TotalProducts</h3>
+                <p class="mb-0">Products</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- Top 5 Products -->
+    <div class="col-md-5">
+        <div class="card shadow">
+            <div class="card-header bg-dark text-white">
+                <i class="bi bi-trophy"></i> Top 5 Selling Products
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-hover mb-0">
+                    <thead class="table-secondary">
+                        <tr><th>#</th><th>Product</th><th>Sold</th><th>Revenue</th></tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.TopProducts.Count; i++)
+                        {
+                            var p = Model.TopProducts[i];
+                            <tr>
+                                <td><span class="badge bg-warning text-dark">@(i+1)</span></td>
+                                <td>@p.ProductName</td>
+                                <td>@p.TotalSold</td>
+                                <td>₹@p.Revenue.ToString("N0")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pending Orders -->
+    <div class="col-md-7">
+        <div class="card shadow">
+            <div class="card-header bg-warning">
+                <i class="bi bi-clock-history"></i> Pending Orders
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-hover mb-0">
+                    <thead class="table-secondary">
+                        <tr><th>Order#</th><th>Customer</th><th>Date</th><th>Total</th><th>Action</th></tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var o in Model.PendingOrders)
+                        {
+                            <tr>
+                                <td>#@o.OrderId</td>
+                                <td>@o.CustomerName</td>
+                                <td>@o.OrderDate.ToString("dd MMM")</td>
+                                <td>₹@o.TotalAmount.ToString("N0")</td>
+                                <td>
+                                    <form method="post" asp-action="UpdateShipping" class="d-inline">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="orderId" value="@o.OrderId" />
+                                        <input type="hidden" name="status" value="Dispatched" />
+                                        <input type="hidden" name="carrier" value="BlueDart" />
+                                        <input type="hidden" name="tracking" value="TRK@(o.OrderId)2025" />
+                                        <button class="btn btn-sm btn-success">Ship</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Customer Summary -->
+    <div class="col-12">
+        <div class="card shadow">
+            <div class="card-header bg-info text-white">
+                <i class="bi bi-person-lines-fill"></i> Customer Order Summary
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-striped mb-0">
+                    <thead class="table-dark">
+                        <tr><th>Customer</th><th>Email</th><th>Total Orders</th><th>Total Spent</th></tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var c in Model.CustomerSummaries)
+                        {
+                            <tr>
+                                <td>@c.CustomerName</td>
+                                <td>@c.Email</td>
+                                <td><span class="badge bg-primary">@c.TotalOrders</span></td>
+                                <td class="fw-bold text-success">₹@c.TotalSpent.ToString("N2")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

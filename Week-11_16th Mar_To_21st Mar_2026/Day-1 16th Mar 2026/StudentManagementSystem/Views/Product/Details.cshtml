@@ -1,0 +1,38 @@
+﻿@model StudentManagementSystem.Models.Product
+@{
+    ViewData["Title"] = "Product Details";
+}
+
+<div class="page-header">
+    <h1 class="page-title">Product Details</h1>
+    <p class="page-subtitle">ID #@Model.Id · <span class="badge badge-orange">@Model.Category</span></p>
+</div>
+
+<div class="card" style="max-width:600px;">
+    <div class="details-grid">
+        <div class="detail-item">
+            <div class="detail-label">Product Name</div>
+            <div class="detail-value">@Model.Name</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-label">Price</div>
+            <div class="detail-value" style="color:var(--success);font-family:'Syne',sans-serif;font-size:1.2rem;">₹@Model.Price.ToString("N2")</div>
+        </div>
+        <div class="detail-item" style="grid-column:1/-1;">
+            <div class="detail-label">Description</div>
+            <div class="detail-value">@Model.Description</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-label">Category</div>
+            <div class="detail-value"><span class="badge badge-orange">@Model.Category</span></div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-label">Created At</div>
+            <div class="detail-value">@Model.CreatedAt.ToString("MMM dd, yyyy · HH:mm")</div>
+        </div>
+    </div>
+    <div style="display:flex;gap:0.75rem;margin-top:1.75rem;">
+        <a href="/Product/Index" class="btn btn-secondary">← Back to Products</a>
+        <a href="/Product/Create" class="btn btn-primary">+ Add Product</a>
+    </div>
+</div>

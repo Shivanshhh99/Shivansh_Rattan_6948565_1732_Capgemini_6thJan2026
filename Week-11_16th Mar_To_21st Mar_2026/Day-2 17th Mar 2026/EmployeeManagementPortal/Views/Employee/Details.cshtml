@@ -1,0 +1,78 @@
+﻿@model EmployeeManagementPortal.Models.Employee
+@{
+    ViewData["Title"] = "Employee Profile";
+}
+
+<div class="ph">
+    <div class="ph-left">
+        <h1>Employee Profile</h1>
+        <p>ID #@Model.Id.ToString("D4") · Registered @Model.JoinedOn.ToString("MMM dd, yyyy")</p>
+    </div>
+    <div style="display:flex;gap:0.6rem;">
+        <a href="/Employee/Register" class="btn btn-primary">+ New Employee</a>
+        <a href="/HR/EmployeeList" class="btn btn-ghost">View All</a>
+    </div>
+</div>
+
+<div class="card" style="max-width:700px;">
+
+    <!-- Profile Header -->
+    <div style="display:flex;align-items:center;gap:1.25rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--border);">
+        <div class="avatar" style="width:56px;height:56px;font-size:1.2rem;">
+            @Model.Name[0].ToString().ToUpper()
+        </div>
+        <div>
+            <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.2rem;">@Model.Name</div>
+            <div style="color:var(--text-2);font-size:0.85rem;margin-top:0.15rem;">@Model.JobTitle</div>
+        </div>
+        <div style="margin-left:auto;">
+            @if (Model.Status == "Active")
+            {
+                <span class="badge badge-green">● Active</span>
+            }
+            else if (Model.Status == "Inactive")
+            {
+
+                <span class="badge badge-red">● Inactive</span>
+            }
+            else
+            {
+
+                <span class="badge badge-amber">● @Model.Status</span>
+            }
+        </div>
+    </div>
+
+    <!-- Details -->
+    <div class="detail-grid">
+        <div class="detail-item">
+            <div class="detail-label">Employee ID</div>
+            <div class="detail-value">#@Model.Id.ToString("D4")</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-label">Age</div>
+            <div class="detail-value">@Model.Age years old</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-label">Email Address</div>
+            <div class="detail-value">@Model.Email</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-label">Department</div>
+            <div class="detail-value"><span class="badge badge-teal">@Model.Department</span></div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-label">Job Title</div>
+            <div class="detail-value">@(string.IsNullOrEmpty(Model.JobTitle) ? "—" : Model.JobTitle)</div>
+        </div>
+        <div class="detail-item">
+            <div class="detail-label">Date Joined</div>
+            <div class="detail-value">@Model.JoinedOn.ToString("dddd, MMMM dd yyyy")</div>
+        </div>
+    </div>
+
+    <div class="form-actions" style="margin-top:1.5rem;">
+        <a href="/HR/EmployeeList" class="btn btn-ghost">← Employee List</a>
+        <a href="/Account/Dashboard" class="btn btn-ghost">Dashboard</a>
+    </div>
+</div>

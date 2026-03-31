@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-5 text-center">
+
+        <h2 class="text-success mb-3">
+            Welcome, @ViewBag.Username 👋
+        </h2>
+
+        <p class="text-muted">You are successfully logged in.</p>
+
+        <a asp-action="Logout" class="btn btn-danger mt-3">
+            Logout
+        </a>
+
+    </div>
+</div>

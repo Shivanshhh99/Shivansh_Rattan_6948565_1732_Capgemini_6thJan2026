@@ -1,0 +1,18 @@
+﻿@model IEnumerable<CompanyManager.Models.Employee>
+
+<h2>Employees in Project</h2>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Name</th>
+    </tr>
+
+    @foreach (var emp in Model)
+    {
+        <tr>
+            <td>@emp.Name</td>
+        </tr>
+    }
+
+</table>

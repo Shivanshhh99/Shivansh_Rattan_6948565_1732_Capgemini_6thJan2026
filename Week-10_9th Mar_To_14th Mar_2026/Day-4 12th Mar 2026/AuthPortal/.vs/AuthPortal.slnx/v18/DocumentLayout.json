@@ -1,0 +1,326 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\views\\admin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:views\\admin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\views\\students\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:views\\students\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:controllers\\studentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\middleware\\authenticationmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:middleware\\authenticationmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:services\\studentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\services\\istudentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:services\\istudentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\services\\operationlogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:services\\operationlogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\services\\ioperationlogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:services\\ioperationlogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:services\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\models\\admindashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:models\\admindashboardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\models\\studentindexviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:models\\studentindexviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\models\\operationlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:models\\operationlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|e:\\capegemini_cu_sec3_netcoreazure_harsh_tanwar\\week_10_9th_mar_to_14th_mar_2026\\day_4_12th_mar_2026\\authportal\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EC3C303-FCD1-4413-9680-F09E0BB136D2}|AuthPortal.csproj|solutionrelative:models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswAkAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-12T09:02:14.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Index.cshtml",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAqwG0AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-12T09:01:46.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Views\\Admin\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\Login.cshtml",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Views\\Admin\\Login.cshtml",
+              "RelativeToolTip": "Views\\Admin\\Login.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAqwBIAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-12T09:01:12.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Views\\Students\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Students\\Index.cshtml",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Views\\Students\\Index.cshtml",
+              "RelativeToolTip": "Views\\Students\\Index.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAqwCUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-12T09:00:29.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAUwDEAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T08:59:52.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAQwJEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T08:59:27.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StudentsController.cs",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Controllers\\StudentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StudentsController.cs",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Controllers\\StudentsController.cs",
+              "RelativeToolTip": "Controllers\\StudentsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T08:58:53.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuthenticationMiddleware.cs",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Middleware\\AuthenticationMiddleware.cs",
+              "RelativeDocumentMoniker": "Middleware\\AuthenticationMiddleware.cs",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Middleware\\AuthenticationMiddleware.cs",
+              "RelativeToolTip": "Middleware\\AuthenticationMiddleware.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAQwCYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T08:58:21.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "StudentService.cs",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Services\\StudentService.cs",
+              "RelativeDocumentMoniker": "Services\\StudentService.cs",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Services\\StudentService.cs",
+              "RelativeToolTip": "Services\\StudentService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwC4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T08:57:48.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IStudentService.cs",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Services\\IStudentService.cs",
+              "RelativeDocumentMoniker": "Services\\IStudentService.cs",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Services\\IStudentService.cs",
+              "RelativeToolTip": "Services\\IStudentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T08:57:04.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "OperationLogService.cs",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Services\\OperationLogService.cs",
+              "RelativeDocumentMoniker": "Services\\OperationLogService.cs",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Services\\OperationLogService.cs",
+              "RelativeToolTip": "Services\\OperationLogService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAowCQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T08:56:30.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IOperationLogService.cs",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Services\\IOperationLogService.cs",
+              "RelativeDocumentMoniker": "Services\\IOperationLogService.cs",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Services\\IOperationLogService.cs",
+              "RelativeToolTip": "Services\\IOperationLogService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T08:56:02.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Services\\AuthService.cs",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Services\\AuthService.cs",
+              "RelativeToolTip": "Services\\AuthService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAowCUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T08:55:26.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Services\\IAuthService.cs",
+              "RelativeDocumentMoniker": "Services\\IAuthService.cs",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Services\\IAuthService.cs",
+              "RelativeToolTip": "Services\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T08:55:02.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AdminDashboardViewModel.cs",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Models\\AdminDashboardViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\AdminDashboardViewModel.cs",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Models\\AdminDashboardViewModel.cs",
+              "RelativeToolTip": "Models\\AdminDashboardViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T08:54:00.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "StudentIndexViewModel.cs",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Models\\StudentIndexViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\StudentIndexViewModel.cs",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Models\\StudentIndexViewModel.cs",
+              "RelativeToolTip": "Models\\StudentIndexViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T08:53:33.376Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "OperationLog.cs",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Models\\OperationLog.cs",
+              "RelativeDocumentMoniker": "Models\\OperationLog.cs",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Models\\OperationLog.cs",
+              "RelativeToolTip": "Models\\OperationLog.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T08:52:27.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Student.cs",
+              "DocumentMoniker": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "Models\\Student.cs",
+              "ToolTip": "E:\\Capegemini_CU_Sec3_NetCoreAzure_Harsh_Tanwar\\Week_10_9th_Mar_to_14th_Mar_2026\\Day_4_12th_Mar_2026\\AuthPortal\\Models\\Student.cs",
+              "RelativeToolTip": "Models\\Student.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T08:51:53.563Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

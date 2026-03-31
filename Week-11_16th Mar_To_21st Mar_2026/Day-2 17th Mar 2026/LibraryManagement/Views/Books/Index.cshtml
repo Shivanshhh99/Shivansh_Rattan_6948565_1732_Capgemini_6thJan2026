@@ -1,0 +1,50 @@
+﻿@model List<LibraryManagement.ViewModels.BookViewModel>
+
+@{
+    ViewData["Title"] = "Books";
+}
+
+<div class="container mt-4">
+    <h2 class="text-center text-primary">@ViewBag.Message</h2>
+
+    <div class="alert alert-info text-center">
+        Total Books: <strong>@ViewData["TotalBooks"]</strong>
+    </div>
+
+    <a class="btn btn-success mb-3" asp-action="Create">➕ Add New Book</a>
+
+    <table class="table table-bordered table-hover shadow">
+        <thead class="table-dark">
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Year</th>
+                <th>Genre</th>
+                <th>Status</th>
+                <th>Borrower</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Book.Title</td>
+                    <td>@item.Book.Author</td>
+                    <td>@item.Book.PublishedYear</td>
+                    <td>@item.Book.Genre</td>
+                    <td>
+                        @if (item.IsAvailable)
+                        {
+                            <span class="badge bg-success">Available</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Issued</span>
+                        }
+                    </td>
+                    <td>@item.BorrowerName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

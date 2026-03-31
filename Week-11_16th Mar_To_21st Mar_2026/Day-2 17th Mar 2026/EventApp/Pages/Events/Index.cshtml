@@ -1,0 +1,42 @@
+﻿@page
+@model EventApp.Pages.Events.IndexModel
+
+<div class="container mt-4">
+    <h2 class="text-center text-success">📋 Participants List</h2>
+
+    <table class="table table-bordered table-hover shadow mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Event</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var p in Model.Participants)
+            {
+                <tr>
+                    <td>@p.ParticipantName</td>
+                    <td>@p.Email</td>
+                    <td>@p.EventName</td>
+                    <td>
+                        <form method="post" asp-page-handler="Delete">
+                            <input type="hidden" name="id" value="@p.Id" />
+
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <button class="btn btn-danger btn-sm">Delete</button>
+                            }
+                            else
+                            {
+                                <span class="text-muted">No Access</span>
+                            }
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

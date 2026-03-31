@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="dashboard-hero">
+    <p class="hero-greeting">Welcome back,</p>
+    <h1 class="hero-name"><span>@ViewBag.Username</span> 👋</h1>
+    <p style="color:var(--text-secondary);margin-top:0.75rem;font-size:0.9rem;">
+        @DateTime.Now.ToString("dddd, MMMM dd yyyy · HH:mm")
+    </p>
+</div>
+
+<div class="stats-grid" style="margin-bottom:2rem;">
+    <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Products Listed</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number" style="color:var(--success);">∞</div>
+        <div class="stat-label">Students Capacity</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number" style="color:var(--accent-2);">1</div>
+        <div class="stat-label">Active Session</div>
+    </div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title" style="font-size:1.2rem;">Student Module</h2>
+            <p class="card-subtitle">Register and manage students</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <a href="/Student/Register" class="btn btn-primary">+ Register New Student</a>
+            <a href="/Student/List" class="btn btn-secondary">View All Students</a>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title" style="font-size:1.2rem;">Product Module</h2>
+            <p class="card-subtitle">Browse and manage products</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <a href="/Product/Create" class="btn btn-primary">+ Add New Product</a>
+            <a href="/Product/Index" class="btn btn-secondary">View All Products</a>
+        </div>
+    </div>
+</div>

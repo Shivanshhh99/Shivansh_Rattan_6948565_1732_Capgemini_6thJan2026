@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] — EMP Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-mark">E</div>
+            <div>
+                <div class="brand-name">EMP Portal</div>
+                <div class="brand-sub">Management System</div>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div class="nav-section-label">Main</div>
+            <a href="/Account/Dashboard" class="sidebar-link">
+                <span class="link-icon">⬡</span> Dashboard
+            </a>
+
+            <div class="nav-section-label">Employees</div>
+            <a href="/Employee/Register" class="sidebar-link">
+                <span class="link-icon">＋</span> Register Employee
+            </a>
+
+            <div class="nav-section-label">HR Module</div>
+            <a href="/HR/Index" class="sidebar-link">
+                <span class="link-icon">◈</span> HR Overview
+            </a>
+            <a href="/HR/EmployeeList" class="sidebar-link">
+                <span class="link-icon">≡</span> Employee List
+            </a>
+            <a href="/HR/Reports" class="sidebar-link">
+                <span class="link-icon">▣</span> Reports
+            </a>
+
+            <div class="nav-section-label" style="margin-top:auto;padding-top:1rem;">Account</div>
+            <a href="/Account/Logout" class="sidebar-link logout-link">
+                <span class="link-icon">→</span> Logout
+            </a>
+        </nav>
+    </aside>
+
+    <div class="page-shell">
+        <header class="topbar">
+            <div class="topbar-left">
+                <span class="topbar-title">@ViewData["Title"]</span>
+            </div>
+            <div class="topbar-right">
+                <div class="session-chip">
+                    <span class="session-dot"></span>
+                    @(Context.Session.GetString("LoggedInUser") ?? "Guest")
+                </div>
+            </div>
+        </header>
+
+        <main class="main-area">
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="toast toast-success">
+                    <span>✓</span> @TempData["SuccessMessage"]
+                </div>
+            }
+            @RenderBody()
+        </main>
+    </div>
+</body>
+</html>

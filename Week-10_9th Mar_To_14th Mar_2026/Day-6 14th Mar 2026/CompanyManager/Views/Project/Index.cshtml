@@ -1,0 +1,20 @@
+﻿@model IEnumerable<CompanyManager.Models.Project>
+
+<h2>Projects</h2>
+
+<a asp-action="Create" class="btn btn-primary">Add Project</a>
+
+<table class="table table-bordered">
+
+<tr>
+<th>Project Title</th>
+</tr>
+
+@foreach(var project in Model)
+{
+<tr>
+<td>@project.Title</td>
+</tr>
+}
+
+</table>

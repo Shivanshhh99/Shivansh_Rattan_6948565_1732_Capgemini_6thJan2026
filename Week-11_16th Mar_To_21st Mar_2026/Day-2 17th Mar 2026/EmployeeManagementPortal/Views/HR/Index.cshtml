@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "HR Overview";
+}
+
+<div class="ph">
+    <div class="ph-left">
+        <h1>HR Overview</h1>
+        <p>Key metrics and workforce breakdown · Logging active on all HR actions.</p>
+    </div>
+</div>
+
+<!-- Stats -->
+<div class="stats-row" style="margin-bottom:1.75rem;">
+    <div class="stat-card stat-teal">
+        <div class="stat-label">Total Workforce</div>
+        <div class="stat-value">@ViewBag.TotalEmployees</div>
+    </div>
+    <div class="stat-card stat-green">
+        <div class="stat-label">Active</div>
+        <div class="stat-value">@ViewBag.ActiveCount</div>
+    </div>
+    <div class="stat-card stat-red">
+        <div class="stat-label">Inactive</div>
+        <div class="stat-value">@ViewBag.InactiveCount</div>
+    </div>
+    <div class="stat-card stat-amber">
+        <div class="stat-label">Departments</div>
+        <div class="stat-value">@((ViewBag.Departments as IEnumerable<dynamic>)?.Count() ?? 0)</div>
+    </div>
+</div>
+
+<!-- Department Breakdown -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;">
+    <div class="card">
+        <div class="card-title">Department Breakdown</div>
+        <div class="card-sub">Headcount per department</div>
+        <div>
+            @foreach (var d in (ViewBag.Departments as IEnumerable<dynamic>) ?? Enumerable.Empty<dynamic>())
+            {
+                var pct = (int)((double)d.Count / (double)ViewBag.TotalEmployees * 100);
+                <div class="report-row">
+                    <div class="report-meta">
+                        <span class="report-dept">@d.Dept</span>
+                        <span class="report-count">@d.Count employee(s) · @pct%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width:@pct%"></div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Quick Links</div>
+        <div class="card-sub">Navigate to HR actions</div>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;">
+            <a href="/HR/EmployeeList" class="btn btn-primary" style="width:100%;">View Full Employee List</a>
+            <a href="/HR/Reports" class="btn btn-ghost" style="width:100%;">Generate Reports</a>
+            <a href="/Employee/Register" class="btn btn-ghost" style="width:100%;">+ Register New Employee</a>
+        </div>
+    </div>
+</div>

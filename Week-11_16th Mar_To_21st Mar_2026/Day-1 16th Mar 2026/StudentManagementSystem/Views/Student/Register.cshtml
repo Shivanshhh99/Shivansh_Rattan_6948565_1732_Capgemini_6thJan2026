@@ -1,0 +1,52 @@
+﻿@model StudentManagementSystem.Models.Student
+@{
+    ViewData["Title"] = "Register Student";
+}
+
+<div class="page-header">
+    <h1 class="page-title">Register Student</h1>
+    <p class="page-subtitle">Fill in the details below to add a new student to the system.</p>
+</div>
+
+<div class="card" style="max-width:700px;">
+    <form asp-action="Register" method="post">
+        @Html.AntiForgeryToken()
+        <div class="form-grid">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input asp-for="Name" placeholder="Full name" />
+                <span asp-validation-for="Name" class="field-validation-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Age"></label>
+                <input asp-for="Age" type="number" placeholder="Age (18–60)" min="18" max="60" />
+                <span asp-validation-for="Age" class="field-validation-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" type="email" placeholder="student@email.com" />
+                <span asp-validation-for="Email" class="field-validation-error"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Course"></label>
+                <select asp-for="Course">
+                    <option value="">-- Select Course --</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <option value="Information Technology">Information Technology</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Business Administration">Business Administration</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                </select>
+                <span asp-validation-for="Course" class="field-validation-error"></span>
+            </div>
+        </div>
+
+        <div style="display:flex;gap:0.75rem;margin-top:1.75rem;">
+            <button type="submit" class="btn btn-primary">Register Student →</button>
+            <a href="/Account/Dashboard" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form>
+</div>

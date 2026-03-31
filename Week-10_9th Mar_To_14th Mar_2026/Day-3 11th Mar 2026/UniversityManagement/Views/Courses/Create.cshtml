@@ -1,0 +1,15 @@
+﻿@model UniversityManagementSystem.Models.Course
+
+<h2>Add Course</h2>
+
+<form asp-action="Create">
+
+    <label>Title</label>
+    <input asp-for="Title" />
+
+    <label>Credits</label>
+    <input asp-for="Credits" />
+
+    <button type="submit">Save</button>
+
+</form>

@@ -1,0 +1,317 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\views\\student\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:views\\student\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\views\\student\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:views\\student\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\views\\student\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:views\\student\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\filters\\customexceptionfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:filters\\customexceptionfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\filters\\logactionfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:filters\\logactionfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|c:\\users\\shiva\\desktop\\capgemini_cu_sec-3_dotnet with azure_shivansh rattan\\week-11_16th mar_to_21st mar_2026\\day-1 16th mar 2026\\studentmanagementsystem\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9B62D097-BED3-BDD8-8DAE-82630C02044D}|StudentManagementSystem.csproj|solutionrelative:models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-17T09:33:09.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-17T07:19:19.998Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "List.cshtml",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Student\\List.cshtml",
+              "RelativeDocumentMoniker": "Views\\Student\\List.cshtml",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Student\\List.cshtml",
+              "RelativeToolTip": "Views\\Student\\List.cshtml",
+              "ViewState": "AgIAABQAAAAAAAAAAAAgwCwAAABsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-17T07:17:54.904Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Product\\Index.cshtml",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwB8AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-17T07:10:11.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Product\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Product\\Details.cshtml",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Product\\Details.cshtml",
+              "RelativeToolTip": "Views\\Product\\Details.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAgwBkAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-17T07:10:29.328Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Product\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Product\\Create.cshtml",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Product\\Create.cshtml",
+              "RelativeToolTip": "Views\\Product\\Create.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAgwCMAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-17T07:10:47.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAgwBgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T07:11:39.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Student\\Register.cshtml",
+              "RelativeDocumentMoniker": "Views\\Student\\Register.cshtml",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Student\\Register.cshtml",
+              "RelativeToolTip": "Views\\Student\\Register.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAiwCUAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-17T07:09:30.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-17T07:15:27.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAgwB8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-17T07:14:51.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Student\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Student\\Details.cshtml",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Views\\Student\\Details.cshtml",
+              "RelativeToolTip": "Views\\Student\\Details.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwCoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-17T07:09:51.667Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Controllers\\ProductController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T07:07:52.804Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\StudentController.cs",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "Controllers\\StudentController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwCgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T07:07:36.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "CustomExceptionFilter.cs",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Filters\\CustomExceptionFilter.cs",
+              "RelativeDocumentMoniker": "Filters\\CustomExceptionFilter.cs",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Filters\\CustomExceptionFilter.cs",
+              "RelativeToolTip": "Filters\\CustomExceptionFilter.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA3wBwAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T07:06:40.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T07:08:05.84Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LogActionFilter.cs",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Filters\\LogActionFilter.cs",
+              "RelativeDocumentMoniker": "Filters\\LogActionFilter.cs",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Filters\\LogActionFilter.cs",
+              "RelativeToolTip": "Filters\\LogActionFilter.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAA3wA4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T07:06:21.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Models\\Product.cs",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Models\\Product.cs",
+              "RelativeToolTip": "Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T07:06:58.475Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Student.cs",
+              "DocumentMoniker": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Models\\Student.cs",
+              "RelativeDocumentMoniker": "Models\\Student.cs",
+              "ToolTip": "C:\\Users\\shiva\\Desktop\\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\\Week-11_16th Mar_To_21st Mar_2026\\Day-1 16th Mar 2026\\StudentManagementSystem\\Models\\Student.cs",
+              "RelativeToolTip": "Models\\Student.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAgwAkAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-17T07:07:09.46Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

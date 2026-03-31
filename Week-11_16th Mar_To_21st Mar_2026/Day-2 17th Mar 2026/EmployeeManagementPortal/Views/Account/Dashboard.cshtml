@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="dash-hero">
+    <div class="hero-label">Administrator Portal</div>
+    <div class="hero-name">Welcome, @ViewBag.Username 👋</div>
+    <div class="hero-meta">
+        Role: @ViewBag.Role &nbsp;·&nbsp;
+        @DateTime.Now.ToString("dddd, MMMM dd yyyy · HH:mm")
+    </div>
+</div>
+
+<!-- Stats -->
+<div class="stats-row">
+    <div class="stat-card stat-teal">
+        <div class="stat-label">Total Employees</div>
+        <div class="stat-value">@EmployeeManagementPortal.Controllers.EmployeeController.Employees.Count</div>
+        <div class="stat-hint">All registered</div>
+    </div>
+    <div class="stat-card stat-green">
+        <div class="stat-label">Active</div>
+        <div class="stat-value">@EmployeeManagementPortal.Controllers.EmployeeController.Employees.Count(e => e.Status == "Active")</div>
+        <div class="stat-hint">Currently employed</div>
+    </div>
+    <div class="stat-card stat-red">
+        <div class="stat-label">Inactive</div>
+        <div class="stat-value">@EmployeeManagementPortal.Controllers.EmployeeController.Employees.Count(e => e.Status == "Inactive")</div>
+        <div class="stat-hint">No longer active</div>
+    </div>
+    <div class="stat-card stat-amber">
+        <div class="stat-label">Departments</div>
+        <div class="stat-value">@EmployeeManagementPortal.Controllers.EmployeeController.Employees.Select(e => e.Department).Distinct().Count()</div>
+        <div class="stat-hint">Unique teams</div>
+    </div>
+</div>
+
+<!-- Quick Actions -->
+<h2 style="font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;margin-bottom:1rem;color:var(--text-2);">Quick Actions</h2>
+<div class="quick-grid">
+    <a href="/Employee/Register" class="quick-card">
+        <div class="quick-icon">＋</div>
+        <div class="quick-label">Register Employee</div>
+        <div class="quick-desc">Add a new employee to the system</div>
+    </a>
+    <a href="/HR/EmployeeList" class="quick-card">
+        <div class="quick-icon">≡</div>
+        <div class="quick-label">Employee List</div>
+        <div class="quick-desc">View and manage all employees</div>
+    </a>
+    <a href="/HR/Reports" class="quick-card">
+        <div class="quick-icon">▣</div>
+        <div class="quick-label">HR Reports</div>
+        <div class="quick-desc">Department analytics & stats</div>
+    </a>
+    <a href="/HR/Index" class="quick-card">
+        <div class="quick-icon">◈</div>
+        <div class="quick-label">HR Overview</div>
+        <div class="quick-desc">HR module dashboard</div>
+    </a>
+    <a href="/Account/Logout" class="quick-card" style="border-color:rgba(248,113,113,0.15);">
+        <div class="quick-icon">→</div>
+        <div class="quick-label" style="color:var(--red);">Logout</div>
+        <div class="quick-desc">End your session securely</div>
+    </a>
+</div>

@@ -1,0 +1,42 @@
+﻿@model List<StudentManagementSystem.Models.Product>
+@{
+    ViewData["Title"] = "Products";
+}
+
+<div class="page-header" style="display:flex;align-items:center;justify-content:space-between;">
+    <div>
+        <h1 class="page-title">Products</h1>
+        <p class="page-subtitle">@Model.Count product(s) in catalog · Logging active on all actions</p>
+    </div>
+    <a href="/Product/Create" class="btn btn-primary">+ Add Product</a>
+</div>
+
+<div class="table-wrap">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Created</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td><span class="badge badge-purple">#@p.Id</span></td>
+                    <td style="font-weight:500;">@p.Name</td>
+                    <td><span class="badge badge-orange">@p.Category</span></td>
+                    <td style="color:var(--success);font-weight:600;">₹@p.Price.ToString("N2")</td>
+                    <td style="color:var(--text-secondary);font-size:0.85rem;">@p.Description</td>
+                    <td style="color:var(--text-secondary);font-size:0.8rem;">@p.CreatedAt.ToString("MMM dd, yyyy")</td>
+                    <td><a href="/Product/Details/@p.Id" class="btn btn-secondary btn-sm">View</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
