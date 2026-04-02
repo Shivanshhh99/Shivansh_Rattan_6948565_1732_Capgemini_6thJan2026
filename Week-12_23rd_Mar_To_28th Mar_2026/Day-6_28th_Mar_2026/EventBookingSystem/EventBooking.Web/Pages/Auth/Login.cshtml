@@ -1,0 +1,100 @@
+@page
+@model EventBooking.Web.Pages.Auth.LoginModel
+@{ ViewData["Title"] = "Login"; }
+
+<div class="container">
+  <div class="auth-card card mx-auto">
+    <div class="text-center mb-4">
+      <i class="bi bi-ticket-perforated-fill display-5 text-primary"></i>
+      <h2 class="fw-bold mt-2">Welcome back</h2>
+      <p class="text-muted">Sign in to book tickets</p>
+    </div>
+
+    <div id="errorMsg" class="alert alert-danger d-none"></div>
+
+    <div class="mb-3">
+      <label class="form-label fw-semibold">Email</label>
+      <div class="input-group">
+        <span class="input-group-text bg-light border-end-0"><i class="bi bi-envelope"></i></span>
+        <input type="email" id="email" class="form-control border-start-0"
+               placeholder="you@example.com" required>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <label class="form-label fw-semibold">Password</label>
+      <div class="input-group">
+        <span class="input-group-text bg-light border-end-0"><i class="bi bi-lock"></i></span>
+        <input type="password" id="password" class="form-control border-start-0"
+               placeholder="••••••••" required>
+        <button class="btn btn-outline-secondary border-start-0" type="button"
+                onclick="togglePwd(this)"><i class="bi bi-eye"></i></button>
+      </div>
+    </div>
+
+    <button class="btn btn-primary w-100 rounded-pill py-2 fw-semibold" id="loginBtn" onclick="doLogin()">
+      Sign In
+    </button>
+
+    <p class="text-center mt-3 text-muted small">
+      Don't have an account? <a href="/Auth/Register" class="text-primary fw-semibold">Register</a>
+    </p>
+  </div>
+</div>
+
+@section Scripts {
+<script>
+async function doLogin() {
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value;
+  const btn = document.getElementById('loginBtn');
+  const err = document.getElementById('errorMsg');
+
+  // Basic client validation
+  if (!email || !password) {
+    err.textContent = 'Please fill in all fields.';
+    err.classList.remove('d-none');
+    return;
+  }
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Signing in...';
+  err.classList.add('d-none');
+
+  try {
+    const resp = await apiFetch('/api/auth/login', {
+      method: 'POST',
+      body: JSON.stringify({ email, password })
+    });
+
+    const data = await resp.json();
+
+    if (resp.ok) {
+      saveAuth(data);
+      showToast('Logged in successfully!', 'success');
+      setTimeout(() => window.location.href = '/Events', 800);
+    } else {
+      err.textContent = data.title || 'Invalid email or password.';
+      err.classList.remove('d-none');
+      btn.disabled = false;
+      btn.textContent = 'Sign In';
+    }
+  } catch (e) {
+    err.textContent = 'Connection error. Is the API running?';
+    err.classList.remove('d-none');
+    btn.disabled = false;
+    btn.textContent = 'Sign In';
+  }
+}
+
+function togglePwd(btn) {
+  const input = btn.previousElementSibling;
+  const isText = input.type === 'text';
+  input.type = isText ? 'password' : 'text';
+  btn.innerHTML = `<i class="bi bi-eye${isText ? '' : '-slash'}"></i>`;
+}
+
+// Enter key support
+document.addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+</script>
+}
