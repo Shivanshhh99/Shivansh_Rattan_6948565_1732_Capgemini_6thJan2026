@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LearnHub — Create Course</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f14; --surface: #161b24; --surface2: #1c2233;
+    --border: #252d3d; --accent: #5b7fff; --text: #e8eaf0;
+    --muted: #6b7280; --success: #34d399; --error: #f87171;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  nav {
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    padding: 0 32px; height: 60px; display: flex; align-items: center;
+    justify-content: space-between;
+  }
+  .logo { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: var(--accent); cursor: pointer; }
+  .back-btn {
+    padding: 8px 18px; border-radius: 8px; border: 1px solid var(--border);
+    background: transparent; color: var(--muted); font-size: 13px; cursor: pointer;
+    transition: all 0.2s; font-family: 'DM Sans', sans-serif;
+  }
+  .back-btn:hover { color: var(--text); border-color: var(--text); }
+
+  main { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
+  h1 { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; margin-bottom: 6px; }
+  .subtitle { color: var(--muted); font-size: 15px; margin-bottom: 40px; }
+
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .full { grid-column: 1/-1; }
+
+  .field { margin-bottom: 0; }
+  label {
+    display: block; font-size: 13px; font-weight: 500;
+    margin-bottom: 8px; color: #9ca3af;
+    text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  input, textarea, select {
+    width: 100%; padding: 13px 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border); border-radius: var(--radius);
+    color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 15px;
+    outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+    -webkit-appearance: none;
+  }
+  textarea { resize: vertical; min-height: 120px; }
+  select option { background: var(--surface); }
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(91,127,255,0.14);
+  }
+  input.invalid, textarea.invalid, select.invalid { border-color: var(--error); }
+  .error-msg { color: var(--error); font-size: 12px; margin-top: 6px; display: none; }
+  .error-msg.show { display: block; }
+
+  .lessons-section {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 24px; margin-top: 32px;
+  }
+  .lessons-section h2 {
+    font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .lessons-section p { color: var(--muted); font-size: 13px; margin-bottom: 20px; }
+
+  .lesson-item {
+    background: var(--surface2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px; margin-bottom: 12px;
+    display: flex; gap: 12px; align-items: flex-start;
+  }
+  .lesson-num {
+    background: rgba(91,127,255,0.15); color: var(--accent);
+    border-radius: 8px; width: 32px; height: 32px; display: flex;
+    align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 700; flex-shrink: 0;
+  }
+  .lesson-fields { flex: 1; display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+  .lesson-fields input { font-size: 14px; padding: 10px 14px; }
+  .remove-lesson {
+    background: none; border: none; color: var(--error);
+    cursor: pointer; font-size: 18px; padding: 0;
+    opacity: 0.6; transition: opacity 0.2s; flex-shrink: 0; margin-top: 2px;
+  }
+  .remove-lesson:hover { opacity: 1; }
+
+  .add-lesson-btn {
+    width: 100%; padding: 11px; background: transparent;
+    border: 1px dashed var(--border); border-radius: 10px;
+    color: var(--muted); font-size: 14px; cursor: pointer;
+    transition: all 0.2s; font-family: 'DM Sans', sans-serif; margin-top: 4px;
+  }
+  .add-lesson-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  .actions { display: flex; gap: 12px; margin-top: 32px; }
+  .btn {
+    padding: 14px 32px; border-radius: var(--radius);
+    font-family: 'Syne', sans-serif; font-size: 15px;
+    font-weight: 700; cursor: pointer; transition: all 0.2s; border: none;
+  }
+  .btn-primary { background: var(--accent); color: #fff; flex: 1; }
+  .btn-primary:hover { opacity: 0.9; }
+  .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+  .btn-ghost {
+    background: transparent; color: var(--muted);
+    border: 1px solid var(--border); padding: 14px 24px;
+  }
+  .btn-ghost:hover { color: var(--text); border-color: var(--text); }
+
+  .toast {
+    margin-top: 20px; padding: 14px 18px; border-radius: 10px;
+    font-size: 14px; display: none;
+  }
+  .toast.success { background: rgba(52,211,153,0.1); color: var(--success); border: 1px solid rgba(52,211,153,0.2); display: block; }
+  .toast.error { background: rgba(248,113,113,0.1); color: var(--error); border: 1px solid rgba(248,113,113,0.2); display: block; }
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo" onclick="window.location.href='courses.html'">LearnHub</div>
+  <button class="back-btn" onclick="window.location.href='courses.html'">← Back to Courses</button>
+</nav>
+
+<main>
+  <h1>Create a Course</h1>
+  <p class="subtitle">Share your knowledge with students worldwide</p>
+
+  <div class="form-grid">
+    <div class="field full">
+      <label>Course Title *</label>
+      <input type="text" id="title" placeholder="e.g. Complete Python Bootcamp 2024" maxlength="200">
+      <div class="error-msg" id="titleErr">Title is required</div>
+    </div>
+
+    <div class="field">
+      <label>Category *</label>
+      <select id="category">
+        <option value="">Select category...</option>
+        <option>Programming</option>
+        <option>Design</option>
+        <option>Business</option>
+        <option>Data Science</option>
+        <option>Marketing</option>
+        <option>Photography</option>
+      </select>
+      <div class="error-msg" id="categoryErr">Select a category</div>
+    </div>
+
+    <div class="field">
+      <label>Price (USD)</label>
+      <input type="number" id="price" placeholder="0 for free" min="0" max="9999.99" step="0.01" value="0">
+    </div>
+
+    <div class="field full">
+      <label>Description</label>
+      <textarea id="description" placeholder="What will students learn? What topics are covered?"></textarea>
+    </div>
+  </div>
+
+  <div class="lessons-section">
+    <h2>Course Lessons</h2>
+    <p>Add lessons to your course (you can also add them later)</p>
+    <div id="lessonsList"></div>
+    <button class="add-lesson-btn" onclick="addLesson()">+ Add Lesson</button>
+  </div>
+
+  <div class="actions">
+    <button class="btn btn-ghost" onclick="window.location.href='courses.html'">Cancel</button>
+    <button class="btn btn-primary" id="submitBtn" onclick="handleSubmit()">Publish Course</button>
+  </div>
+
+  <div id="toast" class="toast"></div>
+</main>
+
+<script>
+  const API = 'http://localhost:5153/api/v1';
+  const token = localStorage.getItem('token');
+  const role = localStorage.getItem('role');
+  let lessonCount = 0;
+
+  // Redirect if not instructor / admin
+  if (!token || (role !== 'Instructor' && role !== 'Admin')) {
+    alert('You must be an Instructor to create courses.');
+    window.location.href = 'courses.html';
+  }
+
+  function addLesson() {
+    lessonCount++;
+    const n = lessonCount;
+    const div = document.createElement('div');
+    div.className = 'lesson-item';
+    div.id = `lesson-${n}`;
+    div.innerHTML = `
+      <div class="lesson-num">${n}</div>
+      <div class="lesson-fields">
+        <input type="text" id="l-title-${n}" placeholder="Lesson title (required)">
+        <input type="number" id="l-duration-${n}" placeholder="Min" min="1" max="600" style="width:80px">
+      </div>
+      <button class="remove-lesson" onclick="removeLesson(${n})" title="Remove">×</button>`;
+    document.getElementById('lessonsList').appendChild(div);
+  }
+
+  function removeLesson(n) {
+    document.getElementById(`lesson-${n}`)?.remove();
+  }
+
+  function validate() {
+    let ok = true;
+    const title = document.getElementById('title');
+    const category = document.getElementById('category');
+
+    if (!title.value.trim()) {
+      title.classList.add('invalid');
+      document.getElementById('titleErr').classList.add('show');
+      ok = false;
+    } else {
+      title.classList.remove('invalid');
+      document.getElementById('titleErr').classList.remove('show');
+    }
+
+    if (!category.value) {
+      category.classList.add('invalid');
+      document.getElementById('categoryErr').classList.add('show');
+      ok = false;
+    } else {
+      category.classList.remove('invalid');
+      document.getElementById('categoryErr').classList.remove('show');
+    }
+
+    return ok;
+  }
+
+  async function handleSubmit() {
+    if (!validate()) return;
+
+    const btn = document.getElementById('submitBtn');
+    const toast = document.getElementById('toast');
+    btn.disabled = true;
+    btn.textContent = 'Publishing...';
+    toast.className = 'toast';
+
+    try {
+      // Step 1: Create course
+      const courseRes = await fetch(`${API}/courses`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({
+          title: document.getElementById('title').value.trim(),
+          description: document.getElementById('description').value.trim() || null,
+          category: document.getElementById('category').value,
+          price: parseFloat(document.getElementById('price').value) || 0
+        })
+      });
+
+      const course = await courseRes.json();
+      if (!courseRes.ok) throw new Error(course.error || 'Failed to create course');
+
+      // Step 2: Add lessons
+      const lessonItems = document.querySelectorAll('.lesson-item');
+      for (let i = 0; i < lessonItems.length; i++) {
+        const id = lessonItems[i].id.replace('lesson-', '');
+        const lessonTitle = document.getElementById(`l-title-${id}`)?.value.trim();
+        const duration = parseInt(document.getElementById(`l-duration-${id}`)?.value) || 5;
+
+        if (lessonTitle) {
+          await fetch(`${API}/courses/${course.id}/lessons`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+              title: lessonTitle,
+              order: i + 1,
+              durationMinutes: duration
+            })
+          });
+        }
+      }
+
+      toast.textContent = `Course "${course.title}" published successfully!`;
+      toast.className = 'toast success';
+
+      setTimeout(() => window.location.href = 'courses.html', 1500);
+
+    } catch (err) {
+      toast.textContent = err.message;
+      toast.className = 'toast error';
+      btn.disabled = false;
+      btn.textContent = 'Publish Course';
+    }
+  }
+
+  // Add first lesson by default
+  addLesson();
+</script>
+</body>
+</html>

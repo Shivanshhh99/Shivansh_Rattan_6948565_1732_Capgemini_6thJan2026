@@ -1,0 +1,360 @@
+2026-04-01 12:16:02.398 +05:30 [INF] User profile is available. Using 'C:\Users\shiva\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-01 12:16:02.890 +05:30 [INF] Now listening on: http://localhost:5153
+2026-04-01 12:16:02.894 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-01 12:16:02.897 +05:30 [INF] Hosting environment: Development
+2026-04-01 12:16:02.899 +05:30 [INF] Content root path: C:\Users\shiva\Desktop\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\Week-13_30th Mar_To_4th Apr_2026\Day-2 31st Mar 2026\LearnPlatform\LearnPlatform.API
+2026-04-01 12:20:17.540 +05:30 [INF] Application is shutting down...
+2026-04-01 12:29:20.667 +05:30 [INF] User profile is available. Using 'C:\Users\shiva\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-01 12:29:20.877 +05:30 [INF] Now listening on: http://localhost:5153
+2026-04-01 12:29:20.881 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-01 12:29:20.883 +05:30 [INF] Hosting environment: Development
+2026-04-01 12:29:20.885 +05:30 [INF] Content root path: C:\Users\shiva\Desktop\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\Week-13_30th Mar_To_4th Apr_2026\Day-2 31st Mar 2026\LearnPlatform\LearnPlatform.API
+2026-04-01 12:29:36.767 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/ - null null
+2026-04-01 12:29:37.145 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/ - 404 0 null 391.0172ms
+2026-04-01 12:29:37.163 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5153/, Response status code: 404
+2026-04-01 12:30:59.805 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/swagger - null null
+2026-04-01 12:30:59.922 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/swagger - 404 0 null 132.0956ms
+2026-04-01 12:30:59.933 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5153/swagger, Response status code: 404
+2026-04-01 12:39:48.398 +05:30 [INF] User profile is available. Using 'C:\Users\shiva\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-01 12:39:48.729 +05:30 [INF] Now listening on: http://localhost:5153
+2026-04-01 12:39:48.747 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-01 12:39:48.758 +05:30 [INF] Hosting environment: Development
+2026-04-01 12:39:48.785 +05:30 [INF] Content root path: C:\Users\shiva\Desktop\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\Week-13_30th Mar_To_4th Apr_2026\Day-2 31st Mar 2026\LearnPlatform\LearnPlatform.API
+2026-04-01 12:40:00.558 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/ - null null
+2026-04-01 12:40:00.751 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/ - 404 0 null 195.923ms
+2026-04-01 12:40:00.930 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5153/, Response status code: 404
+2026-04-01 12:46:28.679 +05:30 [INF] Application is shutting down...
+2026-04-01 12:46:53.297 +05:30 [INF] User profile is available. Using 'C:\Users\shiva\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-01 12:46:53.507 +05:30 [INF] Now listening on: http://localhost:5153
+2026-04-01 12:46:53.513 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-01 12:46:53.515 +05:30 [INF] Hosting environment: Development
+2026-04-01 12:46:53.516 +05:30 [INF] Content root path: C:\Users\shiva\Desktop\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\Week-13_30th Mar_To_4th Apr_2026\Day-2 31st Mar 2026\LearnPlatform\LearnPlatform.API
+2026-04-01 12:47:49.059 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/ - null null
+2026-04-01 12:47:49.664 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/ - 404 0 null 644.7107ms
+2026-04-01 12:47:50.017 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5153/, Response status code: 404
+2026-04-01 12:47:53.844 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/ - null null
+2026-04-01 12:47:53.905 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/ - 404 0 null 67.2865ms
+2026-04-01 12:47:53.938 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5153/, Response status code: 404
+2026-04-01 12:50:50.405 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/auth/register - null null
+2026-04-01 12:50:50.501 +05:30 [INF] CORS policy execution successful.
+2026-04-01 12:50:50.525 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/auth/register - 204 null null 123.4818ms
+2026-04-01 12:50:50.572 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5153/api/auth/register - application/json 95
+2026-04-01 12:50:50.583 +05:30 [INF] CORS policy execution successful.
+2026-04-01 12:50:50.617 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.AuthController.Register (LearnPlatform.API)'
+2026-04-01 12:50:50.812 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(LearnPlatform.API.DTOs.RegisterDto) on controller LearnPlatform.API.Controllers.AuthController (LearnPlatform.API).
+2026-04-01 12:50:52.728 +05:30 [INF] New user registered: shivansh@gmail.com with role Student
+2026-04-01 12:50:52.826 +05:30 [INF] Executing OkObjectResult, writing value of type 'LearnPlatform.API.DTOs.AuthResponseDto'.
+2026-04-01 12:50:52.913 +05:30 [INF] Executed action LearnPlatform.API.Controllers.AuthController.Register (LearnPlatform.API) in 2076.8386ms
+2026-04-01 12:50:52.918 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.AuthController.Register (LearnPlatform.API)'
+2026-04-01 12:50:53.006 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5153/api/auth/register - 200 null application/json; charset=utf-8 2434.3346ms
+2026-04-01 14:07:02.665 +05:30 [INF] Application is shutting down...
+2026-04-01 14:07:27.620 +05:30 [INF] User profile is available. Using 'C:\Users\shiva\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-01 14:07:28.010 +05:30 [INF] Now listening on: http://localhost:5153
+2026-04-01 14:07:28.024 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-01 14:07:28.026 +05:30 [INF] Hosting environment: Development
+2026-04-01 14:07:28.042 +05:30 [INF] Content root path: C:\Users\shiva\Desktop\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\Week-13_30th Mar_To_4th Apr_2026\Day-2 31st Mar 2026\LearnPlatform\LearnPlatform.API
+2026-04-01 14:09:08.756 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/ - null null
+2026-04-01 14:09:09.470 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/ - 404 0 null 771.5738ms
+2026-04-01 14:09:09.519 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5153/, Response status code: 404
+2026-04-01 14:09:12.864 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/ - null null
+2026-04-01 14:09:12.883 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/ - 404 0 null 21.3251ms
+2026-04-01 14:09:12.988 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5153/, Response status code: 404
+2026-04-01 14:10:29.012 +05:30 [INF] Application is shutting down...
+2026-04-01 14:14:39.226 +05:30 [INF] User profile is available. Using 'C:\Users\shiva\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-01 14:14:39.523 +05:30 [INF] Now listening on: http://localhost:5153
+2026-04-01 14:14:39.545 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-01 14:14:39.547 +05:30 [INF] Hosting environment: Development
+2026-04-01 14:14:39.549 +05:30 [INF] Content root path: C:\Users\shiva\Desktop\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\Week-13_30th Mar_To_4th Apr_2026\Day-2 31st Mar 2026\LearnPlatform\LearnPlatform.API
+2026-04-01 14:17:52.878 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - null null
+2026-04-01 14:17:53.160 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:17:53.193 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 204 null null 341.0968ms
+2026-04-01 14:17:53.225 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - application/json null
+2026-04-01 14:17:53.238 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:17:53.531 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 14:17:53.673 +05:30 [INF] Route matched with {action = "GetAll", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 14:17:57.469 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-04-01 14:17:57.750 +05:30 [INF] Executing OkObjectResult, writing value of type 'LearnPlatform.API.DTOs.PagedResult`1[[LearnPlatform.API.DTOs.CourseDto, LearnPlatform.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-01 14:17:57.836 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API) in 4150.3206ms
+2026-04-01 14:17:57.839 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 14:17:57.854 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 200 null application/json; charset=utf-8 4630.3153ms
+2026-04-01 14:18:06.152 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - null null
+2026-04-01 14:18:06.178 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:18:06.187 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 204 null null 38.8095ms
+2026-04-01 14:18:06.192 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - application/json null
+2026-04-01 14:18:06.200 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:18:06.217 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 14:18:06.220 +05:30 [INF] Route matched with {action = "GetAll", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 14:18:06.477 +05:30 [INF] Executing OkObjectResult, writing value of type 'LearnPlatform.API.DTOs.PagedResult`1[[LearnPlatform.API.DTOs.CourseDto, LearnPlatform.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-01 14:18:06.486 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API) in 263.4807ms
+2026-04-01 14:18:06.491 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 14:18:06.493 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 200 null application/json; charset=utf-8 301.1387ms
+2026-04-01 14:18:28.681 +05:30 [INF] Application is shutting down...
+2026-04-01 14:19:04.369 +05:30 [INF] User profile is available. Using 'C:\Users\shiva\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-01 14:19:04.808 +05:30 [INF] Now listening on: http://localhost:5153
+2026-04-01 14:19:04.827 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-01 14:19:04.828 +05:30 [INF] Hosting environment: Development
+2026-04-01 14:19:04.830 +05:30 [INF] Content root path: C:\Users\shiva\Desktop\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\Week-13_30th Mar_To_4th Apr_2026\Day-2 31st Mar 2026\LearnPlatform\LearnPlatform.API
+2026-04-01 14:19:36.596 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - null null
+2026-04-01 14:19:36.851 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:19:36.889 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 204 null null 316.508ms
+2026-04-01 14:19:37.038 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - application/json null
+2026-04-01 14:19:37.058 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:19:37.371 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 14:19:37.484 +05:30 [INF] Route matched with {action = "GetAll", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 14:19:39.526 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-04-01 14:19:39.829 +05:30 [INF] Executing OkObjectResult, writing value of type 'LearnPlatform.API.DTOs.PagedResult`1[[LearnPlatform.API.DTOs.CourseDto, LearnPlatform.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-01 14:19:39.941 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API) in 2446.7703ms
+2026-04-01 14:19:40.005 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 14:19:40.075 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 200 null application/json; charset=utf-8 3038.4519ms
+2026-04-01 14:19:42.381 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses/category/Programming - null null
+2026-04-01 14:19:42.392 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:19:42.404 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses/category/Programming - 204 null null 23.3378ms
+2026-04-01 14:19:42.423 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/api/v1/courses/category/Programming - application/json null
+2026-04-01 14:19:42.435 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:19:42.443 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.GetByCategory (LearnPlatform.API)'
+2026-04-01 14:19:42.484 +05:30 [INF] Route matched with {action = "GetByCategory", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCategory(System.String) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 14:19:42.706 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-04-01 14:19:42.807 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[LearnPlatform.API.DTOs.CourseDto, LearnPlatform.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-01 14:19:42.817 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.GetByCategory (LearnPlatform.API) in 331.0075ms
+2026-04-01 14:19:42.823 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.GetByCategory (LearnPlatform.API)'
+2026-04-01 14:19:42.825 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/api/v1/courses/category/Programming - 200 null application/json; charset=utf-8 401.4048ms
+2026-04-01 14:19:47.720 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses/category/Design - null null
+2026-04-01 14:19:47.729 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:19:47.732 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses/category/Design - 204 null null 12.6988ms
+2026-04-01 14:19:47.790 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/api/v1/courses/category/Design - application/json null
+2026-04-01 14:19:47.867 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:19:47.913 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.GetByCategory (LearnPlatform.API)'
+2026-04-01 14:19:47.949 +05:30 [INF] Route matched with {action = "GetByCategory", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCategory(System.String) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 14:19:48.033 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[LearnPlatform.API.DTOs.CourseDto, LearnPlatform.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-01 14:19:48.035 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.GetByCategory (LearnPlatform.API) in 70.8665ms
+2026-04-01 14:19:48.039 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.GetByCategory (LearnPlatform.API)'
+2026-04-01 14:19:48.051 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/api/v1/courses/category/Design - 200 null application/json; charset=utf-8 261.3664ms
+2026-04-01 14:19:48.668 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses/category/Business - null null
+2026-04-01 14:19:48.685 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:19:48.698 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses/category/Business - 204 null null 29.9439ms
+2026-04-01 14:19:48.738 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/api/v1/courses/category/Business - application/json null
+2026-04-01 14:19:48.752 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:19:48.755 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.GetByCategory (LearnPlatform.API)'
+2026-04-01 14:19:48.765 +05:30 [INF] Route matched with {action = "GetByCategory", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCategory(System.String) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 14:19:48.803 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[LearnPlatform.API.DTOs.CourseDto, LearnPlatform.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-01 14:19:48.806 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.GetByCategory (LearnPlatform.API) in 36.623ms
+2026-04-01 14:19:48.820 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.GetByCategory (LearnPlatform.API)'
+2026-04-01 14:19:48.822 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/api/v1/courses/category/Business - 200 null application/json; charset=utf-8 84.4523ms
+2026-04-01 14:19:50.064 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses/category/Data Science - null null
+2026-04-01 14:19:50.067 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:19:50.068 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses/category/Data Science - 204 null null 3.7686ms
+2026-04-01 14:19:50.084 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/api/v1/courses/category/Data Science - application/json null
+2026-04-01 14:19:50.103 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:19:50.115 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.GetByCategory (LearnPlatform.API)'
+2026-04-01 14:19:50.118 +05:30 [INF] Route matched with {action = "GetByCategory", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetByCategory(System.String) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 14:19:50.181 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[LearnPlatform.API.DTOs.CourseDto, LearnPlatform.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-01 14:19:50.189 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.GetByCategory (LearnPlatform.API) in 67.7922ms
+2026-04-01 14:19:50.205 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.GetByCategory (LearnPlatform.API)'
+2026-04-01 14:19:50.217 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/api/v1/courses/category/Data Science - 200 null application/json; charset=utf-8 131.6678ms
+2026-04-01 14:20:28.045 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/auth/register - null null
+2026-04-01 14:20:28.113 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:20:28.133 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/auth/register - 204 null null 94.2685ms
+2026-04-01 14:20:28.181 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5153/api/auth/register - application/json 92
+2026-04-01 14:20:28.201 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:20:28.219 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.AuthController.Register (LearnPlatform.API)'
+2026-04-01 14:20:28.343 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(LearnPlatform.API.DTOs.RegisterDto) on controller LearnPlatform.API.Controllers.AuthController (LearnPlatform.API).
+2026-04-01 14:20:31.034 +05:30 [INF] New user registered: parth@gmail.com with role Instructor
+2026-04-01 14:20:31.094 +05:30 [INF] Executing OkObjectResult, writing value of type 'LearnPlatform.API.DTOs.AuthResponseDto'.
+2026-04-01 14:20:31.110 +05:30 [INF] Executed action LearnPlatform.API.Controllers.AuthController.Register (LearnPlatform.API) in 2757.381ms
+2026-04-01 14:20:31.115 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.AuthController.Register (LearnPlatform.API)'
+2026-04-01 14:20:31.120 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5153/api/auth/register - 200 null application/json; charset=utf-8 2939.4655ms
+2026-04-01 14:20:32.704 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - null null
+2026-04-01 14:20:32.860 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:20:32.886 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 204 null null 182.1255ms
+2026-04-01 14:20:33.216 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - application/json null
+2026-04-01 14:20:33.347 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:20:33.357 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 14:20:33.361 +05:30 [INF] Route matched with {action = "GetAll", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 14:20:33.500 +05:30 [INF] Executing OkObjectResult, writing value of type 'LearnPlatform.API.DTOs.PagedResult`1[[LearnPlatform.API.DTOs.CourseDto, LearnPlatform.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-01 14:20:33.504 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API) in 140.6373ms
+2026-04-01 14:20:33.509 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 14:20:33.514 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 200 null application/json; charset=utf-8 297.3632ms
+2026-04-01 14:25:45.692 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses - null null
+2026-04-01 14:25:45.727 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:25:45.739 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses - 204 null null 49.9478ms
+2026-04-01 14:25:45.751 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5153/api/v1/courses - application/json 109
+2026-04-01 14:25:45.770 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:25:45.933 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.Create (LearnPlatform.API)'
+2026-04-01 14:25:46.051 +05:30 [INF] Route matched with {action = "Create", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(LearnPlatform.API.DTOs.CreateCourseDto) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 14:25:47.395 +05:30 [INF] Course .net Bootcamp created by user 2
+2026-04-01 14:25:47.590 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-04-01 14:25:47.830 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'LearnPlatform.API.DTOs.CourseDto'.
+2026-04-01 14:25:47.957 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.Create (LearnPlatform.API) in 1901.1216ms
+2026-04-01 14:25:47.959 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.Create (LearnPlatform.API)'
+2026-04-01 14:25:47.962 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5153/api/v1/courses - 201 null application/json; charset=utf-8 2211.2245ms
+2026-04-01 14:25:47.972 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses/1/lessons - null null
+2026-04-01 14:25:47.976 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:25:47.978 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses/1/lessons - 204 null null 5.6669ms
+2026-04-01 14:25:47.982 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5153/api/v1/courses/1/lessons - application/json 52
+2026-04-01 14:25:47.986 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:25:47.993 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.AddLesson (LearnPlatform.API)'
+2026-04-01 14:25:48.014 +05:30 [INF] Route matched with {action = "AddLesson", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddLesson(Int32, LearnPlatform.API.DTOs.CreateLessonDto) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 14:25:48.205 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'LearnPlatform.API.DTOs.LessonDto'.
+2026-04-01 14:25:48.215 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.AddLesson (LearnPlatform.API) in 197.0075ms
+2026-04-01 14:25:48.221 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5153/api/v1/courses/1/lessons - application/json 59
+2026-04-01 14:25:48.225 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.AddLesson (LearnPlatform.API)'
+2026-04-01 14:25:48.228 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:25:48.229 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5153/api/v1/courses/1/lessons - 201 null application/json; charset=utf-8 247.6823ms
+2026-04-01 14:25:48.238 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.AddLesson (LearnPlatform.API)'
+2026-04-01 14:25:48.242 +05:30 [INF] Route matched with {action = "AddLesson", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddLesson(Int32, LearnPlatform.API.DTOs.CreateLessonDto) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 14:25:48.261 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'LearnPlatform.API.DTOs.LessonDto'.
+2026-04-01 14:25:48.264 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.AddLesson (LearnPlatform.API) in 20.0439ms
+2026-04-01 14:25:48.266 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.AddLesson (LearnPlatform.API)'
+2026-04-01 14:25:48.269 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5153/api/v1/courses/1/lessons - 201 null application/json; charset=utf-8 47.7653ms
+2026-04-01 14:25:48.285 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5153/api/v1/courses/1/lessons - application/json 55
+2026-04-01 14:25:48.299 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:25:48.302 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.AddLesson (LearnPlatform.API)'
+2026-04-01 14:25:48.306 +05:30 [INF] Route matched with {action = "AddLesson", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddLesson(Int32, LearnPlatform.API.DTOs.CreateLessonDto) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 14:25:48.316 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'LearnPlatform.API.DTOs.LessonDto'.
+2026-04-01 14:25:48.320 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.AddLesson (LearnPlatform.API) in 9.4638ms
+2026-04-01 14:25:48.335 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.AddLesson (LearnPlatform.API)'
+2026-04-01 14:25:48.345 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5153/api/v1/courses/1/lessons - 201 null application/json; charset=utf-8 60.2758ms
+2026-04-01 14:25:50.579 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - null null
+2026-04-01 14:25:50.629 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:25:50.643 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 204 null null 64.1465ms
+2026-04-01 14:25:50.723 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - application/json null
+2026-04-01 14:25:50.749 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:25:50.765 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 14:25:50.780 +05:30 [INF] Route matched with {action = "GetAll", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 14:25:50.898 +05:30 [INF] Executing OkObjectResult, writing value of type 'LearnPlatform.API.DTOs.PagedResult`1[[LearnPlatform.API.DTOs.CourseDto, LearnPlatform.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-01 14:25:50.904 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API) in 113.0084ms
+2026-04-01 14:25:50.908 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 14:25:50.909 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 200 null application/json; charset=utf-8 186.1131ms
+2026-04-01 14:26:24.989 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/auth/login - null null
+2026-04-01 14:26:24.994 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:26:24.996 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/auth/login - 204 null null 7.0361ms
+2026-04-01 14:26:25.021 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5153/api/auth/login - application/json 56
+2026-04-01 14:26:25.038 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:26:25.046 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.AuthController.Login (LearnPlatform.API)'
+2026-04-01 14:26:25.067 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LearnPlatform.API.DTOs.LoginDto) on controller LearnPlatform.API.Controllers.AuthController (LearnPlatform.API).
+2026-04-01 14:26:25.164 +05:30 [INF] User shivansh@gmail.com logged in successfully
+2026-04-01 14:26:25.165 +05:30 [INF] Executing OkObjectResult, writing value of type 'LearnPlatform.API.DTOs.AuthResponseDto'.
+2026-04-01 14:26:25.169 +05:30 [INF] Executed action LearnPlatform.API.Controllers.AuthController.Login (LearnPlatform.API) in 88.1282ms
+2026-04-01 14:26:25.173 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.AuthController.Login (LearnPlatform.API)'
+2026-04-01 14:26:25.178 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5153/api/auth/login - 200 null application/json; charset=utf-8 155.0775ms
+2026-04-01 14:26:26.073 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - null null
+2026-04-01 14:26:26.102 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:26:26.108 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 204 null null 34.7845ms
+2026-04-01 14:26:26.156 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - application/json null
+2026-04-01 14:26:26.160 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:26:26.185 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 14:26:26.190 +05:30 [INF] Route matched with {action = "GetAll", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 14:26:26.271 +05:30 [INF] Executing OkObjectResult, writing value of type 'LearnPlatform.API.DTOs.PagedResult`1[[LearnPlatform.API.DTOs.CourseDto, LearnPlatform.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-01 14:26:26.375 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API) in 178.373ms
+2026-04-01 14:26:26.395 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 14:26:26.397 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 200 null application/json; charset=utf-8 241.3694ms
+2026-04-01 14:26:29.823 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/enroll - null null
+2026-04-01 14:26:29.832 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:26:29.835 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/enroll - 204 null null 12.5337ms
+2026-04-01 14:26:29.852 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5153/api/v1/enroll - application/json 14
+2026-04-01 14:26:29.875 +05:30 [INF] CORS policy execution successful.
+2026-04-01 14:26:29.882 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.EnrollController.Enroll (LearnPlatform.API)'
+2026-04-01 14:26:29.909 +05:30 [INF] Route matched with {action = "Enroll", controller = "Enroll"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Enroll(LearnPlatform.API.DTOs.EnrollDto) on controller LearnPlatform.API.Controllers.EnrollController (LearnPlatform.API).
+2026-04-01 14:26:30.070 +05:30 [INF] Executing OkObjectResult, writing value of type 'LearnPlatform.API.DTOs.EnrollmentDto'.
+2026-04-01 14:26:30.079 +05:30 [INF] Executed action LearnPlatform.API.Controllers.EnrollController.Enroll (LearnPlatform.API) in 168.7452ms
+2026-04-01 14:26:30.087 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.EnrollController.Enroll (LearnPlatform.API)'
+2026-04-01 14:26:30.090 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5153/api/v1/enroll - 200 null application/json; charset=utf-8 238.0503ms
+2026-04-01 14:27:52.566 +05:30 [INF] Application is shutting down...
+2026-04-01 15:15:11.696 +05:30 [INF] User profile is available. Using 'C:\Users\shiva\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-01 15:15:11.982 +05:30 [INF] Now listening on: http://localhost:5153
+2026-04-01 15:15:11.987 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-01 15:15:11.990 +05:30 [INF] Hosting environment: Development
+2026-04-01 15:15:11.992 +05:30 [INF] Content root path: C:\Users\shiva\Desktop\Capgemini_CU_Sec-3_Dotnet with Azure_Shivansh Rattan\Week-13_30th Mar_To_4th Apr_2026\Day-2 31st Mar 2026\LearnPlatform\LearnPlatform.API
+2026-04-01 15:18:31.866 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/auth/register - null null
+2026-04-01 15:18:32.418 +05:30 [INF] CORS policy execution successful.
+2026-04-01 15:18:32.453 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/auth/register - 204 null null 622.4391ms
+2026-04-01 15:18:32.474 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5153/api/auth/register - application/json 93
+2026-04-01 15:18:32.492 +05:30 [INF] CORS policy execution successful.
+2026-04-01 15:18:32.657 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.AuthController.Register (LearnPlatform.API)'
+2026-04-01 15:18:32.833 +05:30 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register(LearnPlatform.API.DTOs.RegisterDto) on controller LearnPlatform.API.Controllers.AuthController (LearnPlatform.API).
+2026-04-01 15:18:35.328 +05:30 [INF] New user registered: mam@gmail.com with role Instructor
+2026-04-01 15:18:35.414 +05:30 [INF] Executing OkObjectResult, writing value of type 'LearnPlatform.API.DTOs.AuthResponseDto'.
+2026-04-01 15:18:35.459 +05:30 [INF] Executed action LearnPlatform.API.Controllers.AuthController.Register (LearnPlatform.API) in 2604.7577ms
+2026-04-01 15:18:35.463 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.AuthController.Register (LearnPlatform.API)'
+2026-04-01 15:18:35.486 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5153/api/auth/register - 200 null application/json; charset=utf-8 3013.2123ms
+2026-04-01 15:18:39.888 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - null null
+2026-04-01 15:18:39.921 +05:30 [INF] CORS policy execution successful.
+2026-04-01 15:18:39.928 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 204 null null 39.7804ms
+2026-04-01 15:18:39.946 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - application/json null
+2026-04-01 15:18:39.968 +05:30 [INF] CORS policy execution successful.
+2026-04-01 15:18:40.323 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 15:18:40.351 +05:30 [INF] Route matched with {action = "GetAll", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 15:18:41.413 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-04-01 15:18:41.719 +05:30 [INF] Executing OkObjectResult, writing value of type 'LearnPlatform.API.DTOs.PagedResult`1[[LearnPlatform.API.DTOs.CourseDto, LearnPlatform.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-01 15:18:41.751 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API) in 1391.0091ms
+2026-04-01 15:18:41.760 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 15:18:41.768 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 200 null application/json; charset=utf-8 1821.0501ms
+2026-04-01 15:19:20.145 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses - null null
+2026-04-01 15:19:20.227 +05:30 [INF] CORS policy execution successful.
+2026-04-01 15:19:20.269 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses - 204 null null 139.2729ms
+2026-04-01 15:19:20.290 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5153/api/v1/courses - application/json 88
+2026-04-01 15:19:20.299 +05:30 [INF] CORS policy execution successful.
+2026-04-01 15:19:20.508 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.Create (LearnPlatform.API)'
+2026-04-01 15:19:20.595 +05:30 [INF] Route matched with {action = "Create", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(LearnPlatform.API.DTOs.CreateCourseDto) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 15:19:21.332 +05:30 [INF] Course python created by user 3
+2026-04-01 15:19:21.483 +05:30 [WRN] Compiling a query which loads related collections for more than one collection navigation, either via 'Include' or through projection, but no 'QuerySplittingBehavior' has been configured. By default, Entity Framework will use 'QuerySplittingBehavior.SingleQuery', which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'.
+2026-04-01 15:19:21.646 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'LearnPlatform.API.DTOs.CourseDto'.
+2026-04-01 15:19:21.734 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.Create (LearnPlatform.API) in 1134.5339ms
+2026-04-01 15:19:21.737 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.Create (LearnPlatform.API)'
+2026-04-01 15:19:21.740 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5153/api/v1/courses - 201 null application/json; charset=utf-8 1450.2254ms
+2026-04-01 15:19:21.756 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses/2/lessons - null null
+2026-04-01 15:19:21.760 +05:30 [INF] CORS policy execution successful.
+2026-04-01 15:19:21.764 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses/2/lessons - 204 null null 7.8766ms
+2026-04-01 15:19:21.768 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5153/api/v1/courses/2/lessons - application/json 55
+2026-04-01 15:19:21.771 +05:30 [INF] CORS policy execution successful.
+2026-04-01 15:19:21.776 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.AddLesson (LearnPlatform.API)'
+2026-04-01 15:19:21.790 +05:30 [INF] Route matched with {action = "AddLesson", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddLesson(Int32, LearnPlatform.API.DTOs.CreateLessonDto) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 15:19:21.933 +05:30 [INF] Executing CreatedAtActionResult, writing value of type 'LearnPlatform.API.DTOs.LessonDto'.
+2026-04-01 15:19:21.942 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.AddLesson (LearnPlatform.API) in 150.6731ms
+2026-04-01 15:19:21.949 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.AddLesson (LearnPlatform.API)'
+2026-04-01 15:19:21.964 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5153/api/v1/courses/2/lessons - 201 null application/json; charset=utf-8 196.3125ms
+2026-04-01 15:19:23.723 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - null null
+2026-04-01 15:19:23.753 +05:30 [INF] CORS policy execution successful.
+2026-04-01 15:19:23.810 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 204 null null 86.3391ms
+2026-04-01 15:19:23.857 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - application/json null
+2026-04-01 15:19:23.867 +05:30 [INF] CORS policy execution successful.
+2026-04-01 15:19:23.877 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 15:19:23.881 +05:30 [INF] Route matched with {action = "GetAll", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 15:19:24.036 +05:30 [INF] Executing OkObjectResult, writing value of type 'LearnPlatform.API.DTOs.PagedResult`1[[LearnPlatform.API.DTOs.CourseDto, LearnPlatform.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-01 15:19:24.041 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API) in 144.8129ms
+2026-04-01 15:19:24.045 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 15:19:24.049 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 200 null application/json; charset=utf-8 191.6961ms
+2026-04-01 15:19:38.622 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/auth/login - null null
+2026-04-01 15:19:38.626 +05:30 [INF] CORS policy execution successful.
+2026-04-01 15:19:38.632 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/auth/login - 204 null null 9.7904ms
+2026-04-01 15:19:38.638 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5153/api/auth/login - application/json 56
+2026-04-01 15:19:38.642 +05:30 [INF] CORS policy execution successful.
+2026-04-01 15:19:38.648 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.AuthController.Login (LearnPlatform.API)'
+2026-04-01 15:19:38.660 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(LearnPlatform.API.DTOs.LoginDto) on controller LearnPlatform.API.Controllers.AuthController (LearnPlatform.API).
+2026-04-01 15:19:38.721 +05:30 [INF] User shivansh@gmail.com logged in successfully
+2026-04-01 15:19:38.726 +05:30 [INF] Executing OkObjectResult, writing value of type 'LearnPlatform.API.DTOs.AuthResponseDto'.
+2026-04-01 15:19:38.732 +05:30 [INF] Executed action LearnPlatform.API.Controllers.AuthController.Login (LearnPlatform.API) in 61.9333ms
+2026-04-01 15:19:38.735 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.AuthController.Login (LearnPlatform.API)'
+2026-04-01 15:19:38.737 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5153/api/auth/login - 200 null application/json; charset=utf-8 98.6355ms
+2026-04-01 15:19:39.633 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - null null
+2026-04-01 15:19:39.665 +05:30 [INF] CORS policy execution successful.
+2026-04-01 15:19:39.670 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 204 null null 36.4361ms
+2026-04-01 15:19:39.684 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - application/json null
+2026-04-01 15:19:39.694 +05:30 [INF] CORS policy execution successful.
+2026-04-01 15:19:39.698 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 15:19:39.700 +05:30 [INF] Route matched with {action = "GetAll", controller = "Courses"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll(Int32, Int32, System.String) on controller LearnPlatform.API.Controllers.CoursesController (LearnPlatform.API).
+2026-04-01 15:19:39.739 +05:30 [INF] Executing OkObjectResult, writing value of type 'LearnPlatform.API.DTOs.PagedResult`1[[LearnPlatform.API.DTOs.CourseDto, LearnPlatform.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2026-04-01 15:19:39.752 +05:30 [INF] Executed action LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API) in 47.5284ms
+2026-04-01 15:19:39.754 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.CoursesController.GetAll (LearnPlatform.API)'
+2026-04-01 15:19:39.755 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5153/api/v1/courses?page=1&pageSize=9 - 200 null application/json; charset=utf-8 70.9142ms
+2026-04-01 15:19:43.396 +05:30 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:5153/api/v1/enroll - null null
+2026-04-01 15:19:43.402 +05:30 [INF] CORS policy execution successful.
+2026-04-01 15:19:43.405 +05:30 [INF] Request finished HTTP/1.1 OPTIONS http://localhost:5153/api/v1/enroll - 204 null null 8.576ms
+2026-04-01 15:19:43.412 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5153/api/v1/enroll - application/json 14
+2026-04-01 15:19:43.419 +05:30 [INF] CORS policy execution successful.
+2026-04-01 15:19:43.429 +05:30 [INF] Executing endpoint 'LearnPlatform.API.Controllers.EnrollController.Enroll (LearnPlatform.API)'
+2026-04-01 15:19:43.443 +05:30 [INF] Route matched with {action = "Enroll", controller = "Enroll"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Enroll(LearnPlatform.API.DTOs.EnrollDto) on controller LearnPlatform.API.Controllers.EnrollController (LearnPlatform.API).
+2026-04-01 15:19:43.573 +05:30 [INF] Executing OkObjectResult, writing value of type 'LearnPlatform.API.DTOs.EnrollmentDto'.
+2026-04-01 15:19:43.578 +05:30 [INF] Executed action LearnPlatform.API.Controllers.EnrollController.Enroll (LearnPlatform.API) in 131.7913ms
+2026-04-01 15:19:43.581 +05:30 [INF] Executed endpoint 'LearnPlatform.API.Controllers.EnrollController.Enroll (LearnPlatform.API)'
+2026-04-01 15:19:43.584 +05:30 [INF] Request finished HTTP/1.1 POST http://localhost:5153/api/v1/enroll - 200 null application/json; charset=utf-8 171.4759ms

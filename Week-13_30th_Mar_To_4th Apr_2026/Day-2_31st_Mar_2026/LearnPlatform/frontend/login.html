@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LearnHub — Sign In</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #161b24;
+    --border: #252d3d;
+    --accent: #5b7fff;
+    --accent-glow: rgba(91,127,255,0.18);
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --error: #f87171;
+    --success: #34d399;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(91,127,255,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.04) 0%, transparent 50%);
+  }
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 48px 44px;
+    width: 100%;
+    max-width: 440px;
+  }
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+  .subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 36px;
+  }
+  .field { margin-bottom: 20px; }
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  input {
+    width: 100%;
+    padding: 13px 16px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+  }
+  input.invalid { border-color: var(--error); }
+  .error-msg {
+    color: var(--error);
+    font-size: 12px;
+    margin-top: 6px;
+    display: none;
+  }
+  .error-msg.show { display: block; }
+  .btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: opacity 0.2s, transform 0.1s;
+    letter-spacing: 0.3px;
+  }
+  .btn:hover { opacity: 0.9; }
+  .btn:active { transform: scale(0.98); }
+  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .toast {
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    display: none;
+  }
+  .toast.error { background: rgba(248,113,113,0.12); color: var(--error); border: 1px solid rgba(248,113,113,0.2); display: block; }
+  .toast.success { background: rgba(52,211,153,0.12); color: var(--success); border: 1px solid rgba(52,211,153,0.2); display: block; }
+  .switch { text-align: center; margin-top: 24px; font-size: 14px; color: var(--muted); }
+  .switch a { color: var(--accent); text-decoration: none; font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="logo">LearnHub</div>
+  <h1>Welcome back</h1>
+  <p class="subtitle">Sign in to access your courses</p>
+
+  <div class="field">
+    <label>Email</label>
+    <input type="email" id="email" placeholder="you@example.com" autocomplete="email">
+    <div class="error-msg" id="emailErr">Enter a valid email address</div>
+  </div>
+
+  <div class="field">
+    <label>Password</label>
+    <input type="password" id="password" placeholder="••••••••" autocomplete="current-password">
+    <div class="error-msg" id="passErr">Password must be at least 6 characters</div>
+  </div>
+
+  <button class="btn" id="loginBtn" onclick="handleLogin()">Sign in</button>
+
+  <div id="toast" class="toast"></div>
+
+  <div class="switch">
+    Don't have an account? <a href="#" onclick="showRegister()">Sign up</a>
+  </div>
+</div>
+
+<script>
+  const API = 'http://localhost:5153/api';
+
+  function validate() {
+    let ok = true;
+    const email = document.getElementById('email');
+    const pass = document.getElementById('password');
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.value.trim())) {
+      email.classList.add('invalid');
+      document.getElementById('emailErr').classList.add('show');
+      ok = false;
+    } else {
+      email.classList.remove('invalid');
+      document.getElementById('emailErr').classList.remove('show');
+    }
+
+    if (pass.value.length < 6) {
+      pass.classList.add('invalid');
+      document.getElementById('passErr').classList.add('show');
+      ok = false;
+    } else {
+      pass.classList.remove('invalid');
+      document.getElementById('passErr').classList.remove('show');
+    }
+
+    return ok;
+  }
+
+  async function handleLogin() {
+    if (!validate()) return;
+
+    const btn = document.getElementById('loginBtn');
+    const toast = document.getElementById('toast');
+    btn.disabled = true;
+    btn.textContent = 'Signing in...';
+    toast.className = 'toast';
+
+    try {
+      const res = await fetch(`${API}/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: document.getElementById('email').value.trim(),
+          password: document.getElementById('password').value
+        })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Login failed');
+      }
+
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('refreshToken', data.refreshToken);
+      localStorage.setItem('username', data.username);
+      localStorage.setItem('role', data.role);
+
+      toast.textContent = `Welcome back, ${data.username}!`;
+      toast.className = 'toast success';
+
+      setTimeout(() => window.location.href = 'courses.html', 800);
+
+    } catch (err) {
+      toast.textContent = err.message;
+      toast.className = 'toast error';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Sign in';
+    }
+  }
+
+function showRegister() {
+  window.location.href = 'register.html';
+}
+
+  // Enter key support
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Enter') handleLogin();
+  });
+
+  // Redirect if already logged in
+  if (localStorage.getItem('token')) {
+    window.location.href = 'courses.html';
+  }
+</script>
+</body>
+</html>

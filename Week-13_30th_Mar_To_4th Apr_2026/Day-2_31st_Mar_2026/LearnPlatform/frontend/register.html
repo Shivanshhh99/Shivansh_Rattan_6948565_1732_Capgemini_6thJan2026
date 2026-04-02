@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LearnHub — Create Account</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #161b24;
+    --border: #252d3d;
+    --accent: #5b7fff;
+    --accent-glow: rgba(91,127,255,0.18);
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --error: #f87171;
+    --success: #34d399;
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(91,127,255,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(139,92,246,0.04) 0%, transparent 50%);
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 44px;
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--text);
+  }
+
+  .subtitle {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .field {
+    margin-bottom: 18px;
+  }
+
+  label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 7px;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+  }
+
+  input.invalid { border-color: var(--error); }
+
+  .error-msg {
+    color: var(--error);
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+  }
+  .error-msg.show { display: block; }
+
+  /* ── Role Cards ─────────────────────────────── */
+  .role-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: #9ca3af;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+  }
+
+  .role-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .role-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 12px;
+    background: rgba(255,255,255,0.02);
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    width: 100%;
+    outline: none;
+  }
+
+  .role-card:hover {
+    border-color: #3d4f6b;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .role-card.selected {
+    border-color: var(--accent);
+    background: rgba(91,127,255,0.1);
+  }
+
+  .role-card:focus-visible {
+    box-shadow: 0 0 0 3px var(--accent-glow);
+  }
+
+  .role-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+
+  .role-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+
+  .role-desc {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  .role-card.selected .role-desc {
+    color: #8da8ff;
+  }
+
+  .role-error {
+    color: var(--error);
+    font-size: 12px;
+    margin-bottom: 16px;
+    display: none;
+  }
+  .role-error.show { display: block; }
+
+  /* ── Password Strength ──────────────────────── */
+  .strength-bar {
+    display: flex;
+    gap: 4px;
+    margin-top: 8px;
+  }
+
+  .strength-seg {
+    height: 3px;
+    flex: 1;
+    border-radius: 2px;
+    background: var(--border);
+    transition: background 0.3s;
+  }
+
+  .strength-label {
+    font-size: 11px;
+    margin-top: 4px;
+    height: 14px;
+    color: var(--muted);
+    transition: color 0.3s;
+  }
+
+  /* ── Submit Button ───────────────────────────── */
+  .btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: opacity 0.2s, transform 0.1s;
+    letter-spacing: 0.3px;
+  }
+  .btn:hover { opacity: 0.9; }
+  .btn:active { transform: scale(0.98); }
+  .btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+  /* ── Toast ───────────────────────────────────── */
+  .toast {
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    display: none;
+    line-height: 1.4;
+  }
+  .toast.error {
+    display: block;
+    background: rgba(248,113,113,0.1);
+    color: var(--error);
+    border: 1px solid rgba(248,113,113,0.2);
+  }
+  .toast.success {
+    display: block;
+    background: rgba(52,211,153,0.1);
+    color: var(--success);
+    border: 1px solid rgba(52,211,153,0.2);
+  }
+
+  /* ── Footer link ─────────────────────────────── */
+  .switch {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .switch a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .switch a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+  <div class="logo">LearnHub</div>
+  <h1>Create your account</h1>
+  <p class="subtitle">Join thousands of learners and instructors</p>
+
+  <!-- Username + Email -->
+  <div class="row">
+    <div class="field">
+      <label for="username">Username *</label>
+      <input type="text" id="username" placeholder="e.g. shivansh" maxlength="100">
+      <div class="error-msg" id="usernameErr">Username is required</div>
+    </div>
+    <div class="field">
+      <label for="email">Email *</label>
+      <input type="email" id="email" placeholder="you@example.com">
+      <div class="error-msg" id="emailErr">Enter a valid email</div>
+    </div>
+  </div>
+
+  <!-- Password -->
+  <div class="field">
+    <label for="password">Password *</label>
+    <input type="password" id="password" placeholder="Min. 6 characters" oninput="checkStrength(this.value)">
+    <div class="strength-bar">
+      <div class="strength-seg" id="s1"></div>
+      <div class="strength-seg" id="s2"></div>
+      <div class="strength-seg" id="s3"></div>
+      <div class="strength-seg" id="s4"></div>
+    </div>
+    <div class="strength-label" id="strengthLabel"></div>
+    <div class="error-msg" id="passErr">Password must be at least 6 characters</div>
+  </div>
+
+  <!-- Confirm Password -->
+  <div class="field">
+    <label for="confirmPassword">Confirm Password *</label>
+    <input type="password" id="confirmPassword" placeholder="Repeat your password">
+    <div class="error-msg" id="confirmErr">Passwords do not match</div>
+  </div>
+
+  <!-- Role Picker -->
+  <span class="role-label">I want to join as *</span>
+  <div class="role-group">
+
+    <button type="button"
+            class="role-card"
+            id="role-Student"
+            onclick="selectRole('Student')">
+      <div class="role-icon">🎓</div>
+      <div class="role-name">Student</div>
+      <div class="role-desc">Enroll &amp; learn</div>
+    </button>
+
+    <button type="button"
+            class="role-card"
+            id="role-Instructor"
+            onclick="selectRole('Instructor')">
+      <div class="role-icon">🧑‍💻</div>
+      <div class="role-name">Instructor</div>
+      <div class="role-desc">Create courses</div>
+    </button>
+
+  </div>
+  <div class="role-error" id="roleErr">Please select a role to continue</div>
+
+  <!-- Submit -->
+  <button class="btn" id="registerBtn" onclick="handleRegister()">
+    Create Account
+  </button>
+
+  <div id="toast" class="toast"></div>
+
+  <div class="switch">
+    Already have an account? <a href="login.html">Sign in</a>
+  </div>
+
+</div>
+
+<script>
+  const API = 'http://localhost:5153/api';
+  let selectedRole = '';
+
+  // ── Role selection ────────────────────────────────────────────────
+  function selectRole(role) {
+    selectedRole = role;
+
+    document.querySelectorAll('.role-card').forEach(function(card) {
+      card.classList.remove('selected');
+    });
+
+    document.getElementById('role-' + role).classList.add('selected');
+    document.getElementById('roleErr').classList.remove('show');
+
+    console.log('Role selected:', selectedRole);
+  }
+
+  // ── Password strength meter ───────────────────────────────────────
+  function checkStrength(val) {
+    var segs = [
+      document.getElementById('s1'),
+      document.getElementById('s2'),
+      document.getElementById('s3'),
+      document.getElementById('s4')
+    ];
+    var label = document.getElementById('strengthLabel');
+
+    var score = 0;
+    if (val.length >= 6)  score++;
+    if (val.length >= 10) score++;
+    if (/[A-Z]/.test(val) && /[0-9]/.test(val)) score++;
+    if (/[^A-Za-z0-9]/.test(val)) score++;
+
+    var colors = ['#f87171', '#fbbf24', '#34d399', '#5b7fff'];
+    var labels = ['Weak', 'Fair', 'Good', 'Strong'];
+
+    segs.forEach(function(s, i) {
+      s.style.background = i < score ? colors[score - 1] : 'var(--border)';
+    });
+
+    if (val.length === 0) {
+      label.textContent = '';
+    } else {
+      label.textContent = labels[score - 1] || 'Weak';
+      label.style.color = colors[score - 1] || '#f87171';
+    }
+  }
+
+  // ── Client-side validation ────────────────────────────────────────
+  function validate() {
+    var ok = true;
+
+    var username = document.getElementById('username');
+    var email    = document.getElementById('email');
+    var pass     = document.getElementById('password');
+    var confirm  = document.getElementById('confirmPassword');
+
+    // Username
+    if (!username.value.trim()) {
+      username.classList.add('invalid');
+      document.getElementById('usernameErr').classList.add('show');
+      ok = false;
+    } else {
+      username.classList.remove('invalid');
+      document.getElementById('usernameErr').classList.remove('show');
+    }
+
+    // Email
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.value.trim())) {
+      email.classList.add('invalid');
+      document.getElementById('emailErr').classList.add('show');
+      ok = false;
+    } else {
+      email.classList.remove('invalid');
+      document.getElementById('emailErr').classList.remove('show');
+    }
+
+    // Password length
+    if (pass.value.length < 6) {
+      pass.classList.add('invalid');
+      document.getElementById('passErr').classList.add('show');
+      ok = false;
+    } else {
+      pass.classList.remove('invalid');
+      document.getElementById('passErr').classList.remove('show');
+    }
+
+    // Confirm password match
+    if (confirm.value !== pass.value || confirm.value === '') {
+      confirm.classList.add('invalid');
+      document.getElementById('confirmErr').classList.add('show');
+      ok = false;
+    } else {
+      confirm.classList.remove('invalid');
+      document.getElementById('confirmErr').classList.remove('show');
+    }
+
+    // Role
+    if (!selectedRole) {
+      document.getElementById('roleErr').classList.add('show');
+      ok = false;
+    }
+
+    return ok;
+  }
+
+  // ── Register API call ─────────────────────────────────────────────
+  async function handleRegister() {
+    if (!validate()) return;
+
+    var btn   = document.getElementById('registerBtn');
+    var toast = document.getElementById('toast');
+
+    btn.disabled    = true;
+    btn.textContent = 'Creating account...';
+    toast.className = 'toast';
+
+    try {
+      var res = await fetch(API + '/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: document.getElementById('username').value.trim(),
+          email:    document.getElementById('email').value.trim(),
+          password: document.getElementById('password').value,
+          role:     selectedRole
+        })
+      });
+
+      var data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || data.title || 'Registration failed');
+      }
+
+      // Save JWT — same as login
+      localStorage.setItem('token',        data.token);
+      localStorage.setItem('refreshToken', data.refreshToken);
+      localStorage.setItem('username',     data.username);
+      localStorage.setItem('role',         data.role);
+
+      toast.textContent = 'Account created! Welcome, ' + data.username + ' 🎉';
+      toast.className   = 'toast success';
+
+      setTimeout(function() {
+        window.location.href = 'courses.html';
+      }, 1000);
+
+    } catch (err) {
+      toast.textContent = err.message;
+      toast.className   = 'toast error';
+      btn.disabled      = false;
+      btn.textContent   = 'Create Account';
+    }
+  }
+
+  // Enter key submits form
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') handleRegister();
+  });
+
+  // Already logged in → skip to courses
+  if (localStorage.getItem('token')) {
+    window.location.href = 'courses.html';
+  }
+</script>
+
+</body>
+</html>
