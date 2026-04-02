@@ -1,0 +1,6 @@
+@ProductionDebuggingApi_HostAddress = http://localhost:5121
+
+GET {{ProductionDebuggingApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
