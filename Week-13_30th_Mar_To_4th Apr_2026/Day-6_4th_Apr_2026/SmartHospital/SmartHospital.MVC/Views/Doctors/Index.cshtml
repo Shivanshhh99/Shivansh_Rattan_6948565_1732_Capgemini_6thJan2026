@@ -1,0 +1,89 @@
+@using System.Text.Json
+@model List<JsonElement>
+@{
+    ViewData["Title"] = "Doctors";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h4 class="fw-bold mb-1">Our Doctors</h4>
+        <p class="text-muted mb-0" style="font-size:0.88rem;">Find the right specialist for you</p>
+    </div>
+    @if (ViewBag.Role == "Admin")
+    {
+        <a asp-action="Create" class="btn btn-primary">
+            <i class="bi bi-person-plus me-2"></i>Add Doctor
+        </a>
+    }
+</div>
+
+<!-- Department Filter -->
+<div class="data-table-card p-3 mb-4">
+    <div class="d-flex flex-wrap gap-2 align-items-center">
+        <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600;">FILTER:</span>
+        <a href="/Doctors" class="btn btn-sm @(ViewBag.SelectedDepartment == null ? "btn-primary" : "btn-outline-secondary")">
+            All Departments
+        </a>
+        @if (ViewBag.Departments != null)
+        {
+            @foreach (var dept in ViewBag.Departments)
+            {
+                var deptId = dept.GetProperty("departmentId").GetInt32();
+                var isSelected = ViewBag.SelectedDepartment?.ToString() == deptId.ToString();
+                <a href="/Doctors?departmentId=@deptId" class="btn btn-sm @(isSelected ? "btn-primary" : "btn-outline-secondary")">
+                    @dept.GetProperty("departmentName").GetString()
+                </a>
+            }
+        }
+    </div>
+</div>
+
+@if (Model == null || !Model.Any())
+{
+    <div class="text-center py-5">
+        <i class="bi bi-person-x" style="font-size:3rem;color:#ccc;"></i>
+        <p class="mt-3 text-muted">No doctors found in this department.</p>
+    </div>
+}
+else
+{
+    <div class="row g-4">
+        @foreach (var doctor in Model)
+        {
+            var name = doctor.GetProperty("fullName").GetString() ?? "";
+            <div class="col-sm-6 col-lg-4 col-xl-3">
+                <div class="doctor-card">
+                    <div class="doctor-avatar">@(name.Length > 0 ? name[0].ToString().ToUpper() : "D")</div>
+                    <div class="doctor-name">@name</div>
+                    <div class="doctor-dept">@doctor.GetProperty("departmentName").GetString()</div>
+                    <div class="doctor-info">
+                        <span><i class="bi bi-award"></i> @doctor.GetProperty("specialization").GetString()</span>
+                        <span><i class="bi bi-briefcase"></i> @doctor.GetProperty("experienceYears").GetInt32() yrs experience</span>
+                        <span><i class="bi bi-clock"></i> @doctor.GetProperty("availability").GetString()</span>
+                    </div>
+                    <div class="mt-3 d-flex gap-2">
+                        <a asp-action="Details" asp-route-id="@doctor.GetProperty("doctorId").GetInt32()" class="btn btn-sm btn-outline-primary flex-grow-1">
+                            View Profile
+                        </a>
+                        @if (ViewBag.Role == "Patient")
+                        {
+                            <a asp-controller="Appointments" asp-action="Book" asp-route-doctorId="@doctor.GetProperty("doctorId").GetInt32()" class="btn btn-sm btn-primary">
+                                <i class="bi bi-calendar-plus"></i>
+                            </a>
+                        }
+                        @if (ViewBag.Role == "Admin")
+                        {
+                            <form asp-action="Delete" asp-route-id="@doctor.GetProperty("doctorId").GetInt32()" method="post">
+                                @Html.AntiForgeryToken()
+                                <button type="button" class="btn btn-sm btn-outline-danger"
+                                        onclick="confirmDelete(this.closest('form'), '@name')">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </form>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

@@ -1,0 +1,117 @@
+@model UpdateDoctorViewModel
+@{
+    ViewData["Title"] = "Edit Doctor";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="mb-0">
+                        <i class="fas fa-user-md"></i> Edit Doctor Information
+                    </h2>
+                </div>
+                <div class="card-body">
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <h5>
+                                <i class="fas fa-exclamation-circle"></i> Please fix the following errors:
+                            </h5>
+                            <ul class="mb-0">
+                                @foreach (var modelState in ViewData.ModelState.Values)
+                                {
+                                    @foreach (var error in modelState.Errors)
+                                    {
+                                        <li>@error.ErrorMessage</li>
+                                    }
+                                }
+                            </ul>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    <form asp-action="EditDoctor" method="post">
+                        <input type="hidden" asp-for="DoctorId" />
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="FullName" class="form-label"></label>
+                                    <input asp-for="FullName" class="form-control" placeholder="Enter full name" />
+                                    <span asp-validation-for="FullName" class="text-danger small"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="DepartmentId" class="form-label"></label>
+                                    <select asp-for="DepartmentId" class="form-select">
+                                        <option value="">-- Select Department --</option>
+                                        <option value="1">Cardiology</option>
+                                        <option value="2">Neurology</option>
+                                        <option value="3">Orthopedics</option>
+                                        <option value="4">Pediatrics</option>
+                                        <option value="5">General Medicine</option>
+                                    </select>
+                                    <span asp-validation-for="DepartmentId" class="text-danger small"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="Specialization" class="form-label"></label>
+                                    <input asp-for="Specialization" class="form-control" placeholder="e.g., Heart Specialist" />
+                                    <span asp-validation-for="Specialization" class="text-danger small"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label asp-for="ExperienceYears" class="form-label"></label>
+                                    <input asp-for="ExperienceYears" type="number" class="form-control" placeholder="Years of experience" />
+                                    <span asp-validation-for="ExperienceYears" class="text-danger small"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Availability" class="form-label"></label>
+                            <input asp-for="Availability" class="form-control" placeholder="e.g., Mon-Fri, 9AM-5PM" />
+                            <span asp-validation-for="Availability" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ConsultationFee" class="form-label"></label>
+                            <div class="input-group">
+                                <span class="input-group-text">Rs.</span>
+                                <input asp-for="ConsultationFee" type="number" step="0.01" class="form-control" placeholder="500.00" />
+                            </div>
+                            <span asp-validation-for="ConsultationFee" class="text-danger small"></span>
+                        </div>
+
+                        <div class="alert alert-info" role="alert">
+                            <i class="fas fa-info-circle"></i>
+                            <strong>Note:</strong> Email and password cannot be changed through this form. 
+                            Please contact the system administrator if changes are needed.
+                        </div>
+
+                        <div class="d-flex gap-2 justify-content-end mt-4">
+                            <a asp-action="Doctors" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Update Doctor
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

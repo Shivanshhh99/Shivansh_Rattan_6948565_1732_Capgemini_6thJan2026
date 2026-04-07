@@ -1,0 +1,321 @@
+@model SmartHealthcare.Models.DTOs.PagedResult<SmartHealthcare.Models.DTOs.DoctorDTO>
+@{
+    ViewData["Title"] = "Find a Doctor";
+}
+
+<style>
+    .doctor-header {
+        margin-bottom: 3rem;
+    }
+
+    .doctor-header h1 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(135deg, var(--primary-light), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .doctor-header p {
+        color: var(--text-secondary);
+        font-size: 1.05rem;
+    }
+
+    .filters-card {
+        background: rgba(37, 45, 61, 0.4);
+        border: 1px solid var(--border-color);
+        border-radius: 1rem;
+        padding: 1.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .doctor-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .doctor-card {
+        background: rgba(37, 45, 61, 0.5);
+        border: 1px solid var(--border-color);
+        border-radius: 1.25rem;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .doctor-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--accent);
+        box-shadow: 0 24px 48px rgba(0, 212, 255, 0.2);
+        background: rgba(37, 45, 61, 0.8);
+    }
+
+    .doctor-card-avatar {
+        width: 100%;
+        height: 180px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: white;
+    }
+
+    .doctor-card-body {
+        padding: 1.75rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .doctor-name {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+    }
+
+    .doctor-specialization {
+        font-size: 0.85rem;
+        color: var(--accent);
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+    .doctor-info {
+        flex: 1;
+    }
+
+    .doctor-info-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .doctor-info-item i {
+        color: var(--accent);
+        margin-top: 0.125rem;
+        flex: 0 0 auto;
+    }
+
+    .doctor-info-item strong {
+        color: var(--text-primary);
+    }
+
+    .doctor-info-item-value {
+        color: var(--text-secondary);
+    }
+
+    .doctor-badge {
+        display: inline-block;
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .doctor-badge.available {
+        background: rgba(16, 185, 129, 0.2);
+        color: #6ee7b7;
+    }
+
+    .doctor-badge.unavailable {
+        background: rgba(239, 68, 68, 0.2);
+        color: #fca5a5;
+    }
+
+    .doctor-card-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-light);
+    }
+
+    .doctor-card-actions .btn {
+        margin: 0;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 4rem 2rem;
+    }
+
+    .empty-state-icon {
+        font-size: 3rem;
+        color: var(--accent);
+        margin-bottom: 1rem;
+    }
+
+    .pagination {
+        justify-content: center;
+        margin-top: 3rem;
+    }
+
+    .page-link {
+        background: transparent;
+        border: 1px solid var(--border-color);
+        color: var(--accent);
+        transition: all 0.3s ease;
+    }
+
+    .page-link:hover {
+        background: var(--accent);
+        color: #000;
+    }
+
+    .page-item.active .page-link {
+        background: var(--accent);
+        color: #000;
+        border-color: var(--accent);
+    }
+</style>
+
+<div class="container py-4">
+    <!-- Header -->
+    <div class="doctor-header">
+        <h1><i class="bi bi-stethoscope me-2"></i>Find Your Doctor</h1>
+        <p>Browse our network of qualified healthcare professionals</p>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters-card">
+        <form method="get" class="row g-3">
+            <div class="col-md-4">
+                <label class="form-label">Specialization</label>
+                <input type="text" name="specialization" value="@ViewBag.Specialization" class="form-control form-control-lg" placeholder="e.g., Cardiology" />
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Doctor Name</label>
+                <input type="text" name="name" value="@ViewBag.Name" class="form-control form-control-lg" placeholder="Full name" />
+            </div>
+            <div class="col-md-4 d-flex align-items-end gap-2">
+                <button type="submit" class="btn btn-primary btn-lg flex-grow-1">
+                    <i class="bi bi-search me-2"></i>Search
+                </button>
+                <a href="@Url.Action("Index")" class="btn btn-outline-secondary btn-lg">
+                    <i class="bi bi-x-lg"></i>
+                </a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Doctors Grid -->
+    @if (Model?.Items != null && Model.Items.Any())
+    {
+        <div class="doctor-grid">
+            @foreach (var doctor in Model.Items)
+            {
+                <div class="doctor-card">
+                    <div class="doctor-card-avatar">
+                        <i class="bi bi-person-circle" style="font-size: 5rem;"></i>
+                    </div>
+                    <div class="doctor-card-body">
+                        <div class="doctor-badge @(doctor.IsAvailable ? "available" : "unavailable")">
+                            <i class="bi @(doctor.IsAvailable ? "bi-check-circle" : "bi-x-circle") me-1"></i>
+                            @(doctor.IsAvailable ? "Available" : "Unavailable")
+                        </div>
+
+                        <div class="doctor-name">Dr. @doctor.FullName</div>
+                        <div class="doctor-specialization">
+                            @string.Join(", ", doctor.Specializations ?? new List<string>())
+                        </div>
+
+                        <div class="doctor-info">
+                            <div class="doctor-info-item">
+                                <i class="bi bi-envelope-fill"></i>
+                                <div>
+                                    <strong>Email:</strong><br/>
+                                    <small class="doctor-info-item-value">@doctor.Email</small>
+                                </div>
+                            </div>
+                            <div class="doctor-info-item">
+                                <i class="bi bi-telephone-fill"></i>
+                                <div>
+                                    <strong>Phone:</strong><br/>
+                                    <small class="doctor-info-item-value">@doctor.Phone</small>
+                                </div>
+                            </div>
+                            <div class="doctor-info-item">
+                                <i class="bi bi-briefcase-fill"></i>
+                                <div>
+                                    <strong>Experience:</strong><br/>
+                                    <small class="doctor-info-item-value">@doctor.YearsOfExperience years</small>
+                                </div>
+                            </div>
+                            <div class="doctor-info-item">
+                                <i class="bi bi-cash-coin"></i>
+                                <div>
+                                    <strong>Consultation Fee:</strong><br/>
+                                    <small class="doctor-info-item-value" style="color: var(--success);">Rs. @doctor.ConsultationFee</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="doctor-card-actions">
+                        <a asp-action="Details" asp-route-id="@doctor.Id" class="btn btn-outline-primary btn-sm">
+                            <i class="bi bi-info-circle me-2"></i>View Profile
+                        </a>
+                        @if (doctor.IsAvailable)
+                        {
+                            <a asp-controller="Appointment" asp-action="Create" class="btn btn-success btn-sm">
+                                <i class="bi bi-calendar-check me-2"></i>Book Now
+                            </a>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+
+        <!-- Pagination -->
+        @if (Model.PageNumber > 1 || Model.Items.Count() == Model.PageSize)
+        {
+            <nav aria-label="Pagination">
+                <ul class="pagination">
+                    @if (Model.PageNumber > 1)
+                    {
+                        <li class="page-item">
+                            <a class="page-link" href="?page=1&specialization=@ViewBag.Specialization&name=@ViewBag.Name">First</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?page=@(Model.PageNumber - 1)&specialization=@ViewBag.Specialization&name=@ViewBag.Name">Previous</a>
+                        </li>
+                    }
+                    <li class="page-item disabled">
+                        <span class="page-link">Page @Model.PageNumber of @Math.Ceiling((decimal)Model.TotalCount / 10)</span>
+                    </li>
+                    @if (Model.PageNumber * 10 < Model.TotalCount)
+                    {
+                        <li class="page-item">
+                            <a class="page-link" href="?page=@(Model.PageNumber + 1)&specialization=@ViewBag.Specialization&name=@ViewBag.Name">Next</a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        }
+    }
+    else
+    {
+        <div class="empty-state">
+            <div class="empty-state-icon">
+                <i class="bi bi-inbox"></i>
+            </div>
+            <h4 class="text-muted mb-3">No Doctors Found</h4>
+            <p class="text-muted mb-3">Try adjusting your search criteria or browse all doctors</p>
+            <a href="@Url.Action("Index")" class="btn btn-primary">
+                <i class="bi bi-arrow-clockwise me-2"></i>Clear Filters
+            </a>
+        </div>
+    }
+</div>

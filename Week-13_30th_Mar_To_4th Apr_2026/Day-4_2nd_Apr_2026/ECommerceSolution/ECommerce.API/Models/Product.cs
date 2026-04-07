@@ -1,0 +1,10 @@
+namespace ECommerce.API.Models;
+
+public class Product
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public decimal Price { get; set; }
+
+    public List<ProductCategory> ProductCategories { get; set; } = new();
+}

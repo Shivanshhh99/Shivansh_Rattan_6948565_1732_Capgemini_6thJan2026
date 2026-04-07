@@ -1,0 +1,133 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="row g-4 mb-4">
+    <div class="col-sm-6 col-lg-3">
+        <div class="stat-card">
+            <div class="stat-icon teal"><i class="bi bi-building-fill-cross"></i></div>
+            <div class="stat-value">@ViewBag.DepartmentCount</div>
+            <div class="stat-label">Departments</div>
+        </div>
+    </div>
+    <div class="col-sm-6 col-lg-3">
+        <div class="stat-card">
+            <div class="stat-icon blue"><i class="bi bi-person-badge-fill"></i></div>
+            <div class="stat-value">@ViewBag.DoctorCount</div>
+            <div class="stat-label">Doctors</div>
+        </div>
+    </div>
+    @if (ViewBag.Role == "Patient")
+    {
+        <div class="col-sm-6 col-lg-3">
+            <div class="stat-card">
+                <div class="stat-icon green"><i class="bi bi-calendar-check-fill"></i></div>
+                <div class="stat-value">@ViewBag.AppointmentCount</div>
+                <div class="stat-label">My Appointments</div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+            <div class="stat-card">
+                <div class="stat-icon teal"><i class="bi bi-receipt-cutoff"></i></div>
+                <div class="stat-value">@ViewBag.BillCount</div>
+                <div class="stat-label">My Bills (Unpaid: @ViewBag.UnpaidBillCount)</div>
+            </div>
+        </div>
+    }
+</div>
+
+@if (ViewBag.Role == "Patient" && ViewBag.Appointments != null)
+{
+    <div class="data-table-card mb-4">
+        <div class="data-table-header">
+            <h5><i class="bi bi-calendar3 me-2"></i>Recent Appointments</h5>
+            <a asp-controller="Appointments" asp-action="Book" class="btn btn-primary btn-sm">
+                <i class="bi bi-plus-lg me-1"></i>Book New
+            </a>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Doctor</th>
+                        <th>Department</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var appt in ViewBag.Appointments)
+                    {
+                        <tr>
+                            <td><strong>@appt.GetProperty("doctorName").GetString()</strong></td>
+                            <td>@appt.GetProperty("departmentName").GetString()</td>
+                            <td>@DateTime.Parse(appt.GetProperty("appointmentDate").GetString()).ToString("MMM dd, yyyy HH:mm")</td>
+                            <td>
+                                @{
+                                    var status = appt.GetProperty("status").GetString();
+                                    var statusClass = status switch {
+                                        "Completed" => "status-completed",
+                                        "Cancelled" => "status-cancelled",
+                                        _ => "status-booked"
+                                    };
+                                }
+                                <span class="status-badge @statusClass">@status</span>
+                            </td>
+                            <td>
+                                <a asp-controller="Appointments" asp-action="Details" asp-route-id="@appt.GetProperty("appointmentId").GetInt32()" class="btn btn-sm btn-outline-secondary">View</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
+
+<div class="row g-4">
+    <div class="col-md-6">
+        <div class="data-table-card p-4">
+            <h6 class="fw-bold mb-3"><i class="bi bi-lightning-charge-fill text-warning me-2"></i>Quick Actions</h6>
+            <div class="d-flex flex-column gap-2">
+                @if (ViewBag.Role == "Patient")
+                {
+                    <a asp-controller="Appointments" asp-action="Book" class="btn btn-outline-primary text-start">
+                        <i class="bi bi-calendar-plus me-2"></i>Book an Appointment
+                    </a>
+                }
+                <a asp-controller="Doctors" asp-action="Index" class="btn btn-outline-secondary text-start">
+                    <i class="bi bi-search me-2"></i>Find a Doctor
+                </a>
+                <a asp-controller="Appointments" asp-action="Index" class="btn btn-outline-secondary text-start">
+                    <i class="bi bi-list-check me-2"></i>View All Appointments
+                </a>
+                @if (ViewBag.Role == "Patient")
+                {
+                    <a asp-controller="Prescriptions" asp-action="Index" class="btn btn-outline-info text-start">
+                        <i class="bi bi-prescription2 me-2"></i>My Prescriptions
+                    </a>
+                    <a asp-controller="Bills" asp-action="Index" class="btn btn-outline-success text-start">
+                        <i class="bi bi-receipt me-2"></i>My Bills & Pay
+                    </a>
+                }
+                @if (ViewBag.Role == "Admin")
+                {
+                    <a asp-controller="Doctors" asp-action="Create" class="btn btn-outline-success text-start">
+                        <i class="bi bi-person-plus me-2"></i>Add New Doctor
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="data-table-card p-4">
+            <h6 class="fw-bold mb-3"><i class="bi bi-info-circle-fill text-info me-2"></i>System Info</h6>
+            <table class="table table-sm mb-0">
+                <tr><td class="text-muted">Logged in as</td><td><strong>@ViewBag.UserName</strong></td></tr>
+                <tr><td class="text-muted">Role</td><td><span class="badge-role badge-@(ViewBag.Role?.ToString().ToLower())">@ViewBag.Role</span></td></tr>
+                <tr><td class="text-muted">Session</td><td><span class="text-success"><i class="bi bi-circle-fill" style="font-size:0.5rem;vertical-align:middle;"></i> Active</span></td></tr>
+            </table>
+        </div>
+    </div>
+</div>

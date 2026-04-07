@@ -1,0 +1,112 @@
+@using System.Text.Json
+@model JsonElement
+@{
+    ViewData["Title"] = "Prescription Details";
+    var prescriptionId = Model.GetProperty("prescriptionId").GetInt32();
+    var appointmentId = Model.GetProperty("appointmentId").GetInt32();
+    var diagnosis = Model.GetProperty("diagnosis").GetString() ?? "";
+    var medicines = Model.GetProperty("medicines").GetString() ?? "";
+    var notes = Model.GetProperty("notes").GetString() ?? "";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <!-- Back Button -->
+            <a href="@Url.Action("Index")" class="btn btn-outline-secondary mb-3">
+                <i class="bi bi-arrow-left"></i> Back to Prescriptions
+            </a>
+
+            <!-- Prescription Card -->
+            <div class="card shadow-lg">
+                <div class="card-header bg-success bg-opacity-10 border-bottom border-success">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h3 class="mb-0">
+                            <i class="bi bi-prescription2 text-success"></i> Prescription #@prescriptionId
+                        </h3>
+                        <span class="badge bg-success">Active</span>
+                    </div>
+                </div>
+
+                <div class="card-body p-5">
+                    <!-- Diagnosis Section -->
+                    <div class="mb-5">
+                        <h5 class="fw-bold mb-3">
+                            <i class="bi bi-file-medical"></i> Diagnosis
+                        </h5>
+                        <p class="lead mb-0">@diagnosis</p>
+                    </div>
+
+                    <!-- Medicines Section -->
+                    <div class="mb-5">
+                        <h5 class="fw-bold mb-3">
+                            <i class="bi bi-capsule"></i> Medicines
+                        </h5>
+                        @if (medicines.Contains(","))
+                        {
+                            <ul class="list-group list-group-flush">
+                                @foreach (var medicine in medicines.Split(","))
+                                {
+                                    <li class="list-group-item border-start border-4 border-success ps-3">
+                                        @medicine.Trim()
+                                    </li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <div class="alert alert-info mb-0">@medicines</div>
+                        }
+                    </div>
+
+                    <!-- Notes Section -->
+                    @if (!string.IsNullOrEmpty(notes))
+                    {
+                        <div class="mb-5">
+                            <h5 class="fw-bold mb-3">
+                                <i class="bi bi-sticky"></i> Additional Notes
+                            </h5>
+                            <div class="alert alert-light border border-warning rounded">
+                                @notes
+                            </div>
+                        </div>
+                    }
+
+                    <!-- Important Information -->
+                    <div class="alert alert-warning border-left border-4" role="alert">
+                        <h6 class="alert-heading">
+                            <i class="bi bi-exclamation-triangle"></i> Important
+                        </h6>
+                        <p class="mb-2">Please follow the prescription as directed by your doctor.</p>
+                        <ul class="mb-0 ps-3">
+                            <li>Take medicines at the prescribed timings</li>
+                            <li>Complete the full course of treatment</li>
+                            <li>Contact your doctor if you have any side effects</li>
+                            <li>Keep this prescription for your records</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card-footer bg-light">
+                    <div class="d-flex gap-2">
+                        <a href="@Url.Action("Index")" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Back to List
+                        </a>
+                        <a asp-action="Download" asp-route-appointmentId="@appointmentId" class="btn btn-outline-success">
+                            <i class="bi bi-download"></i> Download
+                        </a>
+                        <button class="btn btn-outline-primary" onclick="window.print()">
+                            <i class="bi bi-printer"></i> Print Prescription
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .alert-warning {
+        border-left: 4px solid #ffc107;
+    }
+</style>

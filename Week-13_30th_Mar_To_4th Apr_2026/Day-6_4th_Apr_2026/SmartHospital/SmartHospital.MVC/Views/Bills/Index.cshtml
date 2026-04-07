@@ -1,0 +1,76 @@
+@model List<SmartHospital.MVC.Models.ViewModels.AdminBillViewModel>
+@{
+    ViewData["Title"] = "My Bills";
+}
+
+<div class="data-table-card">
+    <div class="data-table-header">
+        <h5><i class="bi bi-receipt-cutoff me-2"></i>My Billing Information</h5>
+    </div>
+
+    @if (Model == null || !Model.Any())
+    {
+        <div class="p-4 text-muted">No bills have been generated yet.</div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Appointment</th>
+                        <th>Doctor</th>
+                        <th>Date</th>
+                        <th>Consultation</th>
+                        <th>Medicine</th>
+                        <th>Total</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var bill in Model)
+                    {
+                        var isPaid = string.Equals(bill.PaymentStatus, "Paid", StringComparison.OrdinalIgnoreCase);
+                        <tr>
+                            <td>#@bill.AppointmentId</td>
+                            <td>@bill.DoctorName</td>
+                            <td>@bill.AppointmentDate.ToString("dd-MMM-yyyy HH:mm")</td>
+                            <td>Rs. @bill.ConsultationFee.ToString("0.00")</td>
+                            <td>Rs. @bill.MedicineCharges.ToString("0.00")</td>
+                            <td><strong>Rs. @bill.TotalAmount.ToString("0.00")</strong></td>
+                            <td>
+                                @if (isPaid)
+                                {
+                                    <span class="status-badge status-completed">Paid</span>
+                                }
+                                else
+                                {
+                                    <span class="status-badge status-booked">Unpaid</span>
+                                }
+                            </td>
+                            <td>
+                                @if (isPaid)
+                                {
+                                    <button class="btn btn-sm btn-outline-success" disabled>
+                                        <i class="bi bi-check2-circle me-1"></i>Paid
+                                    </button>
+                                }
+                                else
+                                {
+                                    <form asp-action="Pay" method="post" class="d-inline">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="billId" value="@bill.BillId" />
+                                        <button type="submit" class="btn btn-sm btn-success">
+                                            <i class="bi bi-cash-coin me-1"></i>Pay
+                                        </button>
+                                    </form>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

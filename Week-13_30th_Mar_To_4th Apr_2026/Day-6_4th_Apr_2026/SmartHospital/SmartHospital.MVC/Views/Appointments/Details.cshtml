@@ -1,0 +1,62 @@
+@using System.Text.Json
+@model JsonElement
+@{
+    ViewData["Title"] = "Appointment Details";
+    var appointmentId = Model.GetProperty("appointmentId").GetInt32();
+    var patientName = Model.GetProperty("patientName").GetString() ?? "";
+    var doctorName = Model.GetProperty("doctorName").GetString() ?? "";
+    var departmentName = Model.GetProperty("departmentName").GetString() ?? "";
+    var appointmentDate = DateTime.Parse(Model.GetProperty("appointmentDate").GetString() ?? DateTime.UtcNow.ToString("O"));
+    var status = Model.GetProperty("status").GetString() ?? "";
+    var hasPrescription = Model.GetProperty("hasPrescription").GetBoolean();
+    var hasBill = Model.GetProperty("hasBill").GetBoolean();
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h3 class="mb-0">Appointment #@appointmentId</h3>
+        <a asp-action="Index" class="btn btn-outline-secondary">Back</a>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="text-muted small">Patient</label>
+                    <div class="fw-semibold">@patientName</div>
+                </div>
+                <div class="col-md-6">
+                    <label class="text-muted small">Doctor</label>
+                    <div class="fw-semibold">@doctorName</div>
+                </div>
+                <div class="col-md-6">
+                    <label class="text-muted small">Department</label>
+                    <div>@departmentName</div>
+                </div>
+                <div class="col-md-6">
+                    <label class="text-muted small">Appointment Date</label>
+                    <div>@appointmentDate.ToString("dd-MMM-yyyy HH:mm")</div>
+                </div>
+                <div class="col-md-6">
+                    <label class="text-muted small">Status</label>
+                    <div><span class="badge bg-info">@status</span></div>
+                </div>
+                <div class="col-md-6">
+                    <label class="text-muted small">Prescription</label>
+                    <div>@(hasPrescription ? "Available" : "Not Generated")</div>
+                </div>
+                <div class="col-md-6">
+                    <label class="text-muted small">Bill</label>
+                    <div>@(hasBill ? "Generated" : "Not Generated")</div>
+                </div>
+            </div>
+
+            <div class="mt-4 d-flex gap-2">
+                @if (hasPrescription)
+                {
+                    <a asp-controller="Prescriptions" asp-action="Details" asp-route-appointmentId="@appointmentId" class="btn btn-success btn-sm">View Prescription</a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

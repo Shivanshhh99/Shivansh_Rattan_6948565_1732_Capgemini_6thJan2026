@@ -1,0 +1,230 @@
+@model SmartHealthcare.Models.DTOs.LoginDTO
+@{
+    ViewData["Title"] = "Login";
+}
+
+<style>
+    body {
+        overflow-x: hidden;
+    }
+
+    .login-wrapper {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+    }
+
+    .login-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        width: 100%;
+        max-width: 1000px;
+        background: linear-gradient(135deg, rgba(26, 31, 46, 0.8), rgba(37, 45, 61, 0.6));
+        border: 1px solid var(--border-color);
+        border-radius: 1.5rem;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px);
+    }
+
+    .login-form-side {
+        padding: 4rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .login-visual-side {
+        background: linear-gradient(135deg, rgba(0, 102, 255, 0.2), rgba(124, 58, 237, 0.2));
+        padding: 4rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-left: 1px solid var(--border-color);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .login-visual-side::before {
+        content: '';
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(0, 212, 255, 0.3), transparent);
+        border-radius: 50%;
+        top: -50px;
+        right: -50px;
+    }
+
+    .login-visual-side::after {
+        content: '';
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(circle, rgba(124, 58, 237, 0.3), transparent);
+        border-radius: 50%;
+        bottom: -30px;
+        left: -30px;
+    }
+
+    .visual-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: white;
+    }
+
+    .visual-icon {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(135deg, var(--primary-light), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .visual-content h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .visual-content p {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .login-form-side h2 {
+        font-size: 1.75rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(135deg, var(--primary-light), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .login-form-side .form-text {
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+        font-size: 0.95rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-check {
+        margin-bottom: 1.5rem;
+    }
+
+    .demo-credentials {
+        background: rgba(0, 212, 255, 0.1);
+        border: 1px solid rgba(0, 212, 255, 0.3);
+        border-radius: 0.75rem;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .demo-credentials strong {
+        color: var(--accent);
+    }
+
+    @@media (max-width: 768px) {
+        .login-container {
+            grid-template-columns: 1fr;
+        }
+
+        .login-visual-side {
+            display: none;
+        }
+
+        .login-form-side {
+            padding: 2.5rem 1.5rem;
+        }
+
+        .login-form-side h2 {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+
+<div class="login-wrapper">
+    <div class="login-container">
+        <!-- Form Side -->
+        <div class="login-form-side">
+            <div>
+                <h2>Welcome Back</h2>
+                <p class="form-text">Sign in to access your healthcare account</p>
+
+                <form asp-action="Login" method="post" novalidate>
+                    <div asp-validation-summary="All" class="alert alert-danger" role="alert"></div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label asp-for="Email" class="form-label">
+                            <i class="bi bi-envelope me-2"></i>Email Address
+                        </label>
+                        <input asp-for="Email" class="form-control form-control-lg" placeholder="you@example.com" />
+                        <span asp-validation-for="Email" class="text-danger small mt-1 d-block"></span>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label asp-for="Password" class="form-label">
+                            <i class="bi bi-key me-2"></i>Password
+                        </label>
+                        <input asp-for="Password" class="form-control form-control-lg" type="password" placeholder="••••••••" />
+                        <span asp-validation-for="Password" class="text-danger small mt-1 d-block"></span>
+                    </div>
+
+                    <!-- Remember Me -->
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="rememberMe" />
+                        <label class="form-check-label" for="rememberMe">
+                            Remember me for 30 days
+                        </label>
+                    </div>
+
+                    <!-- Demo Credentials -->
+                    <div class="demo-credentials">
+                        <strong>Demo Account:</strong><br />
+                        Email: admin@healthcare.com<br />
+                        Password: Admin@123
+                    </div>
+
+                    <!-- Login Button -->
+                    <button type="submit" class="btn btn-primary btn-lg w-100 mb-3">
+                        <i class="bi bi-box-arrow-in-right me-2"></i>Sign In
+                    </button>
+
+                    <!-- Register Link -->
+                    <p class="text-center text-muted mb-0">
+                        Don't have an account? <a asp-action="Register" class="text-decoration-none fw-bold" style="color: var(--accent);">Create one</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Visual Side -->
+        <div class="login-visual-side">
+            <div class="visual-content">
+                <div class="visual-icon">
+                    <i class="bi bi-hospital"></i>
+                </div>
+                <h3>Smart Healthcare</h3>
+                <p>Secure, reliable healthcare management at your fingertips</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

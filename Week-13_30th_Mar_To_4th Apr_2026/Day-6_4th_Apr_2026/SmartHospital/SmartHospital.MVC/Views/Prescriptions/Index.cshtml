@@ -1,0 +1,115 @@
+@using System.Text.Json
+@model List<JsonElement>
+@{
+    ViewData["Title"] = "My Prescriptions";
+    var role = ViewBag.Role as string;
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="fw-bold mb-1">
+                        <i class="bi bi-prescription2"></i> Prescriptions
+                    </h2>
+                    <p class="text-muted mb-0">View prescription records and details</p>
+                </div>
+                <a href="@Url.Action("Index", "Dashboard")" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left"></i> Back
+                </a>
+            </div>
+
+            @if (Model == null || Model.Count == 0)
+            {
+                <div class="alert alert-info text-center py-5">
+                    <i class="bi bi-info-circle" style="font-size: 2rem;"></i>
+                    <p class="mt-2 mb-0">You don't have any prescriptions yet. Complete an appointment to receive a prescription.</p>
+                </div>
+            }
+            else
+            {
+                <div class="row g-3">
+                    @foreach (var prescription in Model)
+                    {
+                        var prescriptionId = prescription.GetProperty("prescriptionId").GetInt32();
+                        var appointmentId = prescription.GetProperty("appointmentId").GetInt32();
+                        var diagnosis = prescription.GetProperty("diagnosis").GetString() ?? "N/A";
+                        var medicines = prescription.GetProperty("medicines").GetString() ?? "N/A";
+                        var notes = prescription.GetProperty("notes").GetString() ?? "";
+                        <div class="col-md-6">
+                            <div class="card h-100 shadow-sm">
+                                <div class="card-header bg-success bg-opacity-10 border-bottom border-success border-opacity-25">
+                                    <h6 class="mb-0">
+                                        <i class="bi bi-prescription2 text-success"></i>
+                                        Prescription #@prescriptionId
+                                    </h6>
+                                </div>
+                                <div class="card-body">
+                                    @if (prescription.TryGetProperty("patientName", out var patientName))
+                                    {
+                                        <div class="mb-2">
+                                            <label class="text-muted small">Patient</label>
+                                            <p class="mb-0">@patientName.GetString()</p>
+                                        </div>
+                                    }
+                                    @if (prescription.TryGetProperty("doctorName", out var doctorName))
+                                    {
+                                        <div class="mb-2">
+                                            <label class="text-muted small">Doctor</label>
+                                            <p class="mb-0">@doctorName.GetString()</p>
+                                        </div>
+                                    }
+                                    <div class="mb-3">
+                                        <label class="text-muted small">Diagnosis</label>
+                                        <p class="mb-0">@diagnosis</p>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label class="text-muted small">Medicines</label>
+                                        <p class="mb-0">
+                                            @if (medicines.Contains(","))
+                                            {
+                                                <ul class="mb-0 ps-3">
+                                                    @foreach (var medicine in medicines.Split(","))
+                                                    {
+                                                        <li>@medicine.Trim()</li>
+                                                    }
+                                                </ul>
+                                            }
+                                            else
+                                            {
+                                                <span>@medicines</span>
+                                            }
+                                        </p>
+                                    </div>
+
+                                    @if (!string.IsNullOrEmpty(notes))
+                                    {
+                                        <div class="mb-3">
+                                            <label class="text-muted small">Additional Notes</label>
+                                            <p class="mb-0 text-secondary">@notes</p>
+                                        </div>
+                                    }
+                                </div>
+                                <div class="card-footer bg-light">
+                                    <div class="d-flex gap-2">
+                                        <a asp-action="Details" asp-route-appointmentId="@appointmentId" class="btn btn-sm btn-outline-primary">
+                                            <i class="bi bi-eye"></i> View Full Details
+                                        </a>
+                                        @if (role == "Patient")
+                                        {
+                                            <a asp-action="Download" asp-route-appointmentId="@appointmentId" class="btn btn-sm btn-outline-success">
+                                                <i class="bi bi-download"></i> Download
+                                            </a>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+    </div>
+</div>

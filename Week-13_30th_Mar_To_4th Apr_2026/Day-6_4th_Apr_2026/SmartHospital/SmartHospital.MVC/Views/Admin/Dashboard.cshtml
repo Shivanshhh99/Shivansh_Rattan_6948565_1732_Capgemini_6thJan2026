@@ -1,0 +1,141 @@
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="container mt-4">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h1>Admin Dashboard</h1>
+            <p class="text-muted">Welcome, <strong>@ViewBag.UserName</strong>!</p>
+        </div>
+    </div>
+
+    <!-- Statistics Cards -->
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card text-white bg-primary">
+                <div class="card-body">
+                    <h5 class="card-title">Total Users</h5>
+                    <h2>@ViewBag.TotalUsers</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card text-white bg-success">
+                <div class="card-body">
+                    <h5 class="card-title">Total Doctors</h5>
+                    <h2>@ViewBag.TotalDoctors</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card text-white bg-info">
+                <div class="card-body">
+                    <h5 class="card-title">Total Appointments</h5>
+                    <h2>@ViewBag.TotalAppointments</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card text-white bg-warning">
+                <div class="card-body">
+                    <h5 class="card-title">Total Departments</h5>
+                    <h2>@ViewBag.TotalDepartments</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card text-white bg-danger">
+                <div class="card-body">
+                    <h5 class="card-title">Total Bills</h5>
+                    <h2>@ViewBag.TotalBills</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Management Links -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h3>Management</h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">User Management</h5>
+                    <p class="card-text">Manage all registered users in the system</p>
+                    <a href="@Url.Action("Users", "Admin")" class="btn btn-primary">Manage Users</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Doctor Management</h5>
+                    <p class="card-text">Manage doctors and their specializations</p>
+                    <a href="@Url.Action("Doctors", "Admin")" class="btn btn-primary">Manage Doctors</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Appointments</h5>
+                    <p class="card-text">View and manage all appointments</p>
+                    <a href="@Url.Action("Appointments", "Admin")" class="btn btn-primary">View Appointments</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Billing</h5>
+                    <p class="card-text">Track and manage billing information</p>
+                    <a href="@Url.Action("Billing", "Admin")" class="btn btn-primary">View Billing</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Departments</h5>
+                    <p class="card-text">Manage hospital departments</p>
+                    <a href="@Url.Action("Departments", "Admin")" class="btn btn-primary">Manage Departments</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        transition: transform 0.2s;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    }
+    
+    .bg-primary { background-color: #007bff !important; }
+    .bg-success { background-color: #28a745 !important; }
+    .bg-info { background-color: #17a2b8 !important; }
+    .bg-warning { background-color: #ffc107 !important; }
+    .bg-danger { background-color: #dc3545 !important; }
+</style>

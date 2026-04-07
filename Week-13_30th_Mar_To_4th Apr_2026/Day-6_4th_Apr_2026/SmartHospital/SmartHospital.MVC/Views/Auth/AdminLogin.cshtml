@@ -1,0 +1,146 @@
+@model SmartHospital.MVC.Models.ViewModels.LoginViewModel
+@{
+    Layout = null;
+    ViewData["Title"] = "Admin Login";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Admin Login – Smart Hospital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css"/>
+    <style>
+        .admin-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        .auth-wrapper {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .auth-left {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .admin-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="auth-wrapper">
+    <div class="auth-left">
+        <div>
+            <div class="admin-icon">
+                <i class="bi bi-shield-lock"></i>
+            </div>
+            <div class="auth-logo" style="color: white;">
+                <i class="bi bi-heart-pulse-fill"></i> SmartHospital
+            </div>
+            <p class="auth-tagline" style="color: rgba(255,255,255,0.9);">Administrator Portal<br>Manage Hospital Operations</p>
+            <div class="mt-5 d-flex gap-4" style="opacity:0.8;font-size:0.85rem;color:white;">
+                <div><i class="bi bi-shield-check"></i> Secure Access</div>
+                <div><i class="bi bi-key"></i> Authorization</div>
+                <div><i class="bi bi-graph-up"></i> Analytics</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="auth-right">
+        <div class="auth-form">
+            <div class="admin-badge">
+                <i class="bi bi-shield me-2"></i>Administrator Login
+            </div>
+            <h2 style="font-family:'DM Serif Display',serif;font-size:1.8rem;margin-bottom:4px;">Admin Access</h2>
+            <p style="color:#6b7a8d;font-size:0.9rem;margin-bottom:28px;">Sign in with your administrator credentials</p>
+
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success py-2 mb-3 rounded-3"><i class="bi bi-check-circle me-2"></i>@TempData["Success"]</div>
+            }
+
+            <form asp-action="AdminLogin" asp-controller="Auth" method="post" novalidate id="loginForm">
+                @Html.AntiForgeryToken()
+
+                <div asp-validation-summary="All" class="alert alert-danger py-2 mb-3 rounded-3" style="font-size:0.85rem;display:none;" id="validationSummary"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label">Admin Email</label>
+                    <div class="input-group">
+                        <span class="input-group-text" style="background:#f8f9fa;border-right:none;border-color:#dde4e2;">
+                            <i class="bi bi-envelope" style="color:#667eea;"></i>
+                        </span>
+                        <input asp-for="Email" class="form-control" placeholder="admin@hospital.com" autocomplete="email" style="border-left:none;"/>
+                    </div>
+                    <span asp-validation-for="Email" class="field-validation-error"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Password" class="form-label">Admin Password</label>
+                    <div class="input-group">
+                        <span class="input-group-text" style="background:#f8f9fa;border-right:none;border-color:#dde4e2;">
+                            <i class="bi bi-lock" style="color:#667eea;"></i>
+                        </span>
+                        <input asp-for="Password" class="form-control" type="password" placeholder="Your admin password" id="loginPassword" style="border-left:none;border-right:none;"/>
+                        <button type="button" class="input-group-text" style="background:#f8f9fa;border-left:none;border-color:#dde4e2;cursor:pointer;" onclick="togglePwd('loginPassword',this)">
+                            <i class="bi bi-eye" style="color:#667eea;"></i>
+                        </button>
+                    </div>
+                    <span asp-validation-for="Password" class="field-validation-error"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 py-2" id="loginBtn" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);border:none;">
+                    <span id="loginBtnText"><i class="bi bi-shield-lock me-2"></i>Access Admin Panel</span>
+                    <span id="loginSpinner" class="d-none"><span class="spinner-border spinner-border-sm me-2"></span>Authenticating...</span>
+                </button>
+            </form>
+
+            <hr class="my-4" style="border-color:#dde4e2;"/>
+            <p class="text-center" style="font-size:0.88rem;color:#6b7a8d;">
+                Not an admin?
+                <a asp-controller="Auth" asp-action="Login" style="color:var(--primary);font-weight:600;">User Login</a>
+            </p>
+
+            <div class="alert alert-info mt-4" style="font-size:0.85rem;background:#e7f5ff;border-color:#b3daff;">
+                <i class="bi bi-info-circle me-2"></i>
+                <strong>Default Admin Credentials:</strong><br>
+                Email: <code>admin@hospital.com</code><br>
+                Password: <code>Admin@123456</code>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@4.0.0/dist/jquery.validate.unobtrusive.min.js"></script>
+<script>
+function togglePwd(id, btn) {
+    const inp = document.getElementById(id);
+    const icon = btn.querySelector('i');
+    if (inp.type === 'password') { inp.type = 'text'; icon.className = 'bi bi-eye-slash'; }
+    else { inp.type = 'password'; icon.className = 'bi bi-eye'; }
+}
+
+$('#loginForm').on('submit', function(e) {
+    if (!$(this).valid()) { e.preventDefault(); $('#validationSummary').show(); }
+    else { $('#loginBtn').prop('disabled', true); $('#loginBtnText').addClass('d-none'); $('#loginSpinner').removeClass('d-none'); }
+});
+</script>
+</body>
+</html>

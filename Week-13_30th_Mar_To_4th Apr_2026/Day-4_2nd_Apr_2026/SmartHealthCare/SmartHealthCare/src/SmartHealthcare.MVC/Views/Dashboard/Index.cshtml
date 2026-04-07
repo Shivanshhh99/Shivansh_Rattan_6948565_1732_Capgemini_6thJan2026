@@ -1,0 +1,220 @@
+@{
+    ViewData["Title"] = "Dashboard";
+    var role = ViewBag.Role as string;
+    var fullName = ViewBag.FullName as string;
+}
+
+<div class="container-fluid mt-4">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="jumbotron bg-light p-4 rounded">
+                <h1 class="display-4">Welcome, <strong>@fullName</strong>! 👋</h1>
+                <p class="lead">You're logged in as: <span class="badge bg-info">@role</span></p>
+                <hr class="my-4">
+                <p>Smart Healthcare Management System - Your gateway to quality healthcare</p>
+            </div>
+        </div>
+    </div>
+
+    @if (role == "Admin")
+    {
+        <div class="row mb-4">
+            <div class="col-md-3 mb-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body bg-primary text-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="card-title text-white-50">USERS</h6>
+                                <h3 class="mb-0">-</h3>
+                            </div>
+                            <i class="bi bi-people fs-1 text-white-50"></i>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="@Url.Action("Users", "Admin")" class="btn btn-sm btn-primary w-100">Manage Users</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body bg-success text-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="card-title text-white-50">DOCTORS</h6>
+                                <h3 class="mb-0">-</h3>
+                            </div>
+                            <i class="bi bi-hospital fs-1 text-white-50"></i>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="@Url.Action("Index", "Doctor")" class="btn btn-sm btn-success w-100">View Doctors</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body bg-warning text-dark">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="card-title">PATIENTS</h6>
+                                <h3 class="mb-0">-</h3>
+                            </div>
+                            <i class="bi bi-person-check fs-1"></i>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="@Url.Action("Index", "Appointment")" class="btn btn-sm btn-warning w-100">View Patients</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body bg-danger text-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h6 class="card-title text-white-50">APPOINTMENTS</h6>
+                                <h3 class="mb-0">-</h3>
+                            </div>
+                            <i class="bi bi-calendar-check fs-1 text-white-50"></i>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="@Url.Action("Index", "Appointment")" class="btn btn-sm btn-danger w-100">View All</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-dark text-white">
+                        <h5 class="mb-0"><i class="bi bi-graph-up"></i> Admin Reports</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center py-5">
+                            <p class="text-muted">Reports data will be displayed here</p>
+                            <a href="@Url.Action("Reports", "Admin")" class="btn btn-dark">View Detailed Reports</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else if (role == "Doctor")
+    {
+        <div class="row mb-4">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body bg-info text-white">
+                        <h5 class="card-title text-white-50">MY APPOINTMENTS</h5>
+                        <p class="card-text display-6">View Schedule</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="@Url.Action("Index", "Appointment")" class="btn btn-info w-100">Go to Appointments</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body bg-secondary text-white">
+                        <h5 class="card-title text-white-50">MY PROFILE</h5>
+                        <p class="card-text display-6">Update Info</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="@Url.Action("Profile", "Patient")" class="btn btn-secondary w-100">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body bg-warning text-dark">
+                        <h5 class="card-title">PRESCRIPTIONS</h5>
+                        <p class="card-text display-6">Manage Rx</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="javascript:void(0)" class="btn btn-warning w-100">View Prescriptions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+    else if (role == "Patient")
+    {
+        <div class="row mb-4">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body bg-success text-white">
+                        <h5 class="card-title text-white-50">BOOK APPOINTMENT</h5>
+                        <p class="card-text">Schedule a visit with a doctor</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="@Url.Action("Create", "Appointment")" class="btn btn-success w-100">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body bg-info text-white">
+                        <h5 class="card-title text-white-50">MY APPOINTMENTS</h5>
+                        <p class="card-text">View your schedule</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="@Url.Action("Index", "Appointment")" class="btn btn-info w-100">View All</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body bg-warning text-dark">
+                        <h5 class="card-title">MY PROFILE</h5>
+                        <p class="card-text">Update your info</p>
+                    </div>
+                    <div class="card-footer bg-transparent">
+                        <a href="@Url.Action("Profile", "Patient")" class="btn btn-warning w-100">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 mb-4">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0"><i class="bi bi-stethoscope"></i> Browse Our Doctors</h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Looking for an experienced doctor? Browse our network of qualified healthcare professionals.</p>
+                        <a href="@Url.Action("Index", "Doctor")" class="btn btn-primary"><i class="bi bi-search"></i> Find a Doctor</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .card {
+        transition: all 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    .bg-primary { background-color: #0d6efd !important; }
+    .bg-success { background-color: #198754 !important; }
+    .bg-info { background-color: #0dcaf0 !important; }
+    .bg-warning { background-color: #ffc107 !important; }
+    .bg-danger { background-color: #dc3545 !important; }
+    .bg-secondary { background-color: #6c757d !important; }
+    .bg-dark { background-color: #212529 !important; }
+</style>

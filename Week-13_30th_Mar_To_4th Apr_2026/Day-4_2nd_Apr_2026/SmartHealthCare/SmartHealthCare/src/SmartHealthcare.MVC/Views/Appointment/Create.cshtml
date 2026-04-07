@@ -1,0 +1,147 @@
+@model SmartHealthcare.Models.DTOs.CreateAppointmentDTO
+@{
+    ViewData["Title"] = "Book Appointment";
+    var doctors = ViewBag.Doctors as IEnumerable<SmartHealthcare.Models.DTOs.DoctorDTO> ?? Enumerable.Empty<SmartHealthcare.Models.DTOs.DoctorDTO>();
+}
+
+<style>
+    .appointment-form {
+        background: rgba(37, 45, 61, 0.5);
+        border: 1px solid var(--border-color);
+        border-radius: 1.25rem;
+        padding: 2rem;
+    }
+
+    .form-select {
+        background-color: rgba(37, 45, 61, 0.6) !important;
+        color: var(--text-primary) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 0.75rem;
+        min-height: 3rem;
+        padding: 0.75rem 1rem;
+        font-weight: 500;
+    }
+
+    .form-select option {
+        background: var(--bg-secondary);
+        color: var(--text-primary);
+    }
+
+    .form-select:focus {
+        background-color: rgba(37, 45, 61, 0.8) !important;
+        border-color: var(--accent) !important;
+        box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1) !important;
+        color: var(--text-primary);
+    }
+
+    .info-box {
+        background: rgba(0, 212, 255, 0.1);
+        border: 1px solid rgba(0, 212, 255, 0.3);
+        border-radius: 1rem;
+        padding: 1.75rem;
+        margin-top: 2rem;
+    }
+
+    .info-box h5 {
+        color: var(--accent);
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .info-box ul {
+        color: var(--text-secondary);
+        margin: 0;
+    }
+
+    .info-box li {
+        margin-bottom: 0.5rem;
+    }
+</style>
+
+<div class="container py-4">
+    <div class="mb-4">
+        <h1 style="font-size: 2rem; font-weight: 800; color: var(--text-primary);"><i class="bi bi-calendar-check me-2"></i>Book an Appointment</h1>
+        <p class="text-muted">Schedule a consultation with our healthcare professionals</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <a href="@Url.Action("Index")" class="btn btn-outline-secondary mb-3"><i class="bi bi-arrow-left me-2"></i>Back</a>
+            
+            <div class="appointment-form">
+                <form asp-action="Create" method="post" novalidate>
+                    <div asp-validation-summary="All" class="alert alert-danger" role="alert"></div>
+                    
+                    <!-- Doctor Selection -->
+                    <div class="mb-4">
+                        <label asp-for="DoctorId" class="form-label d-flex align-items-center">
+                            <i class="bi bi-hospital me-2"></i><span>Select Doctor <span class="text-danger ms-1">*</span></span>
+                        </label>
+                        @if (doctors.Any())
+                        {
+                            <select asp-for="DoctorId" class="form-select form-select-lg">
+                                <option value="">-- Choose a doctor --</option>
+                                @foreach (var doctor in doctors)
+                                {
+                                    <option value="@doctor.Id">Dr. @doctor.FullName (@string.Join(", ", doctor.Specializations ?? new List<string>())) - Rs.@doctor.ConsultationFee</option>
+                                }
+                            </select>
+                        }
+                        else
+                        {
+                            <div class="alert alert-warning">
+                                <i class="bi bi-exclamation-triangle me-2"></i>No doctors available
+                            </div>
+                        }
+                        <span asp-validation-for="DoctorId" class="text-danger small d-block mt-1"></span>
+                    </div>
+
+                    <!-- Appointment Date & Time -->
+                    <div class="mb-4">
+                        <label asp-for="AppointmentDate" class="form-label d-flex align-items-center">
+                            <i class="bi bi-clock me-2"></i><span>Appointment Date & Time <span class="text-danger ms-1">*</span></span>
+                        </label>
+                        <input asp-for="AppointmentDate" class="form-control form-control-lg" type="datetime-local" />
+                        <small class="text-muted d-block mt-1">Select a future date and time</small>
+                        <span asp-validation-for="AppointmentDate" class="text-danger small d-block mt-1"></span>
+                    </div>
+
+                    <!-- Notes -->
+                    <div class="mb-4">
+                        <label asp-for="Notes" class="form-label d-flex align-items-center">
+                            <i class="bi bi-sticky me-2"></i><span>Additional Notes</span>
+                        </label>
+                        <textarea asp-for="Notes" class="form-control form-control-lg" rows="4" placeholder="Describe your symptoms or concerns..."></textarea>
+                        <small class="text-muted d-block mt-1">Help the doctor understand your needs</small>
+                        <span asp-validation-for="Notes" class="text-danger small d-block mt-1"></span>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-end">
+                        <a href="@Url.Action("Index")" class="btn btn-outline-secondary btn-lg">
+                            <i class="bi bi-x-circle me-2"></i>Cancel
+                        </a>
+                        <button type="submit" class="btn btn-success btn-lg">
+                            <i class="bi bi-check-circle me-2"></i>Book Appointment
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Info Box -->
+            <div class="info-box">
+                <h5><i class="bi bi-info-circle"></i> Important Information</h5>
+                <ul class="mb-0">
+                    <li>Arrive 10 minutes early to your appointment</li>
+                    <li>Bring valid ID and medical documents if available</li>
+                    <li>Cancel with 24 hours notice if unable to attend</li>
+                    <li>For emergencies, call our hotline directly</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,122 @@
+@using System.Text.Json
+@model List<JsonElement>
+@{
+    ViewData["Title"] = "Appointments";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h4 class="fw-bold mb-1">Appointments</h4>
+        <p class="text-muted mb-0" style="font-size:0.88rem;">Manage and track your appointments</p>
+    </div>
+    @if (ViewBag.Role == "Patient")
+    {
+        <a asp-action="Book" class="btn btn-primary">
+            <i class="bi bi-calendar-plus me-2"></i>Book New
+        </a>
+    }
+</div>
+
+<div class="data-table-card">
+    @if (Model == null || !Model.Any())
+    {
+        <div class="text-center py-5">
+            <i class="bi bi-calendar-x" style="font-size:3rem;color:#ccc;"></i>
+            <p class="mt-3 text-muted">No appointments found.</p>
+            @if (ViewBag.Role == "Patient")
+            {
+                <a asp-action="Book" class="btn btn-primary mt-2">Book your first appointment</a>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        @if (ViewBag.Role != "Patient") { <th>Patient</th> }
+                        <th>Doctor</th>
+                        <th>Department</th>
+                        <th>Date & Time</th>
+                        <th>Status</th>
+                        <th>Prescription</th>
+                        <th>Bill</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var appt in Model)
+                    {
+                        var apptId = appt.GetProperty("appointmentId").GetInt32();
+                        var status = appt.GetProperty("status").GetString();
+                        var hasPrescription = appt.GetProperty("hasPrescription").GetBoolean();
+                        var hasBill = appt.GetProperty("hasBill").GetBoolean();
+                        var appointmentDateRaw = appt.GetProperty("appointmentDate").GetString();
+                        var parsedAppointmentDate = DateTime.TryParse(appointmentDateRaw, out var appointmentDateValue)
+                            ? appointmentDateValue
+                            : DateTime.MinValue;
+                        var statusClass = status switch {
+                            "Completed" => "status-completed",
+                            "Cancelled" => "status-cancelled",
+                            _ => "status-booked"
+                        };
+
+                        <tr>
+                            <td><small class="text-muted">#@apptId</small></td>
+                            @if (ViewBag.Role != "Patient")
+                            {
+                                <td>@appt.GetProperty("patientName").GetString()</td>
+                            }
+                            <td><strong>@appt.GetProperty("doctorName").GetString()</strong></td>
+                            <td><small>@appt.GetProperty("departmentName").GetString()</small></td>
+                            <td>@parsedAppointmentDate.ToString("MMM dd, yyyy 'at' HH:mm")</td>
+                            <td><span class="status-badge @statusClass">@status</span></td>
+                            <td>
+                                @if (hasPrescription)
+                                {
+                                    <span class="text-success"><i class="bi bi-check-circle-fill"></i></span>
+                                }
+                                else
+                                {
+                                    <span class="text-muted"><i class="bi bi-dash-circle"></i></span>
+                                }
+                            </td>
+                            <td>
+                                @if (hasBill)
+                                {
+                                    <span class="text-success"><i class="bi bi-check-circle-fill"></i></span>
+                                }
+                                else
+                                {
+                                    <span class="text-muted"><i class="bi bi-dash-circle"></i></span>
+                                }
+                            </td>
+                            <td>
+                                <div class="d-flex gap-1">
+                                    @if (hasPrescription)
+                                    {
+                                        <a asp-controller="Prescriptions" asp-action="Details" asp-route-appointmentId="@apptId" class="btn btn-sm btn-outline-success" title="View Prescription">
+                                            <i class="bi bi-prescription2"></i>
+                                        </a>
+                                    }
+                                    else if (ViewBag.Role == "Doctor" && status == "Booked")
+                                    {
+                                        <a asp-controller="Prescriptions" asp-action="Create" asp-route-appointmentId="@apptId" class="btn btn-sm btn-primary" title="Write Prescription">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
+                                    }
+
+                                    <a asp-action="Details" asp-route-id="@apptId" class="btn btn-sm btn-outline-secondary" title="View Appointment">
+                                        <i class="bi bi-eye"></i>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>

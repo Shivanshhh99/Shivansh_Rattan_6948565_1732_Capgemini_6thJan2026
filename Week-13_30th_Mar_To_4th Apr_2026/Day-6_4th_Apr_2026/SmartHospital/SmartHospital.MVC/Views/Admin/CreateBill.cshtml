@@ -1,0 +1,92 @@
+@model CreateBillViewModel
+@{
+    ViewData["Title"] = "Create Bill";
+    var appointments = ViewBag.Appointments as List<AdminAppointmentViewModel> ?? new List<AdminAppointmentViewModel>();
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-success text-white">
+                    <h2 class="mb-0">
+                        <i class="fas fa-receipt"></i> Create New Bill
+                    </h2>
+                </div>
+                <div class="card-body">
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <h5>
+                                <i class="fas fa-exclamation-circle"></i> Please fix the following errors:
+                            </h5>
+                            <ul class="mb-0">
+                                @foreach (var modelState in ViewData.ModelState.Values)
+                                {
+                                    @foreach (var error in modelState.Errors)
+                                    {
+                                        <li>@error.ErrorMessage</li>
+                                    }
+                                }
+                            </ul>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    <form asp-action="CreateBill" method="post">
+                        <div class="mb-3">
+                            <label asp-for="AppointmentId" class="form-label"></label>
+                            <select asp-for="AppointmentId" class="form-select">
+                                <option value="">-- Select Appointment (Patient - Doctor - Date) --</option>
+                                @foreach (var appt in appointments)
+                                {
+                                    <option value="@appt.AppointmentId">
+                                        #@appt.AppointmentId - @appt.PatientName - @appt.DoctorName - @appt.AppointmentDate.ToString("dd/MM/yyyy HH:mm")
+                                    </option>
+                                }
+                            </select>
+                            <span asp-validation-for="AppointmentId" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="ConsultationFee" class="form-label"></label>
+                            <div class="input-group">
+                                <span class="input-group-text">Rs.</span>
+                                <input asp-for="ConsultationFee" type="number" step="0.01" class="form-control" placeholder="0.00" />
+                            </div>
+                            <span asp-validation-for="ConsultationFee" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="MedicineCharges" class="form-label"></label>
+                            <div class="input-group">
+                                <span class="input-group-text">Rs.</span>
+                                <input asp-for="MedicineCharges" type="number" step="0.01" class="form-control" placeholder="0.00" />
+                            </div>
+                            <span asp-validation-for="MedicineCharges" class="text-danger small"></span>
+                        </div>
+
+                        <div class="alert alert-info" role="alert">
+                            <i class="fas fa-info-circle"></i>
+                            <strong>Info:</strong> Bill will be created for the selected appointment. 
+                            You can update the payment status later if needed.
+                        </div>
+
+                        <div class="d-flex gap-2 justify-content-end mt-4">
+                            <a asp-action="Billing" class="btn btn-secondary">
+                                <i class="fas fa-arrow-left"></i> Back
+                            </a>
+                            <button type="submit" class="btn btn-success">
+                                <i class="fas fa-plus-circle"></i> Create Bill
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

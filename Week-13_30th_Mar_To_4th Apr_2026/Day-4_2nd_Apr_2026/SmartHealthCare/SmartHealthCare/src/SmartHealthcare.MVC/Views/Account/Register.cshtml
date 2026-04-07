@@ -1,0 +1,247 @@
+@model SmartHealthcare.Models.DTOs.RegisterDTO
+@{
+    ViewData["Title"] = "Register";
+}
+
+<style>
+    body {
+        overflow-x: hidden;
+    }
+
+    .register-wrapper {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem 1rem;
+    }
+
+    .register-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        width: 100%;
+        max-width: 1100px;
+        background: linear-gradient(135deg, rgba(26, 31, 46, 0.8), rgba(37, 45, 61, 0.6));
+        border: 1px solid var(--border-color);
+        border-radius: 1.5rem;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px);
+    }
+
+    .register-visual-side {
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(0, 212, 255, 0.15));
+        padding: 3rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-right: 1px solid var(--border-color);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .register-visual-side::before {
+        content: '';
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        background: radial-gradient(circle, rgba(16, 185, 129, 0.3), transparent);
+        border-radius: 50%;
+        top: -50px;
+        left: -50px;
+    }
+
+    .visual-item {
+        position: relative;
+        z-index: 1;
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background: rgba(37, 45, 61, 0.4);
+        border: 1px solid rgba(0, 212, 255, 0.2);
+        border-radius: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .visual-item:hover {
+        background: rgba(37, 45, 61, 0.6);
+        border-color: var(--accent);
+    }
+
+    .visual-item-icon {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+        background: linear-gradient(135deg, var(--primary-light), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .visual-item h4 {
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--text-primary);
+    }
+
+    .visual-item p {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        margin: 0;
+    }
+
+    .register-form-side {
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .register-form-side h2 {
+        font-size: 1.75rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(135deg, var(--primary-light), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .register-form-side .form-text {
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.25rem;
+    }
+
+    .form-check {
+        margin-bottom: 1.5rem;
+    }
+
+    @@media (max-width: 992px) {
+        .register-container {
+            grid-template-columns: 1fr;
+        }
+
+        .register-visual-side {
+            display: none;
+        }
+
+        .register-form-side {
+            padding: 2.5rem 1.5rem;
+        }
+
+        .register-form-side h2 {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+
+<div class="register-wrapper">
+    <div class="register-container">
+        <!-- Visual Side -->
+        <div class="register-visual-side">
+            <h3 style="color: var(--text-primary); font-weight: 800; margin-bottom: 2rem; font-size: 1.5rem;">Why Join Us?</h3>
+
+            <div class="visual-item">
+                <div class="visual-item-icon"><i class="bi bi-calendar-check"></i></div>
+                <h4>Easy Booking</h4>
+                <p>Schedule appointments in minutes with qualified doctors</p>
+            </div>
+
+            <div class="visual-item">
+                <div class="visual-item-icon"><i class="bi bi-diary-2"></i></div>
+                <h4>Health Records</h4>
+                <p>Keep your medical history organized and accessible</p>
+            </div>
+
+            <div class="visual-item">
+                <div class="visual-item-icon"><i class="bi bi-shield-lock"></i></div>
+                <h4>Secure & Private</h4>
+                <p>Your data is encrypted with industry standards</p>
+            </div>
+
+            <div class="visual-item">
+                <div class="visual-item-icon"><i class="bi bi-clock-history"></i></div>
+                <h4>Available 24/7</h4>
+                <p>Access care anytime, anywhere from any device</p>
+            </div>
+        </div>
+
+        <!-- Form Side -->
+        <div class="register-form-side">
+            <div>
+                <h2>Create Account</h2>
+                <p class="form-text">Join thousands using Smart Healthcare</p>
+
+                <form asp-action="Register" method="post" novalidate>
+                    <div asp-validation-summary="All" class="alert alert-danger" role="alert"></div>
+
+                    <!-- Full Name -->
+                    <div class="form-group">
+                        <label asp-for="FullName" class="form-label">
+                            <i class="bi bi-person me-2"></i>Full Name
+                        </label>
+                        <input asp-for="FullName" class="form-control form-control-lg" placeholder="John Doe" />
+                        <span asp-validation-for="FullName" class="text-danger small mt-1 d-block"></span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label asp-for="Email" class="form-label">
+                            <i class="bi bi-envelope me-2"></i>Email Address
+                        </label>
+                        <input asp-for="Email" class="form-control form-control-lg" type="email" placeholder="you@example.com" />
+                        <span asp-validation-for="Email" class="text-danger small mt-1 d-block"></span>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label asp-for="Password" class="form-label">
+                            <i class="bi bi-key me-2"></i>Password
+                        </label>
+                        <input asp-for="Password" class="form-control form-control-lg" type="password" placeholder="••••••••" />
+                        <small class="form-text text-muted d-block mt-1">Minimum 6 characters required</small>
+                        <span asp-validation-for="Password" class="text-danger small mt-1 d-block"></span>
+                    </div>
+
+                    <!-- Role Selection -->
+                    <div class="form-group">
+                        <label asp-for="Role" class="form-label">
+                            <i class="bi bi-briefcase me-2"></i>Register as
+                        </label>
+                        <select asp-for="Role" class="form-select form-select-lg">
+                            <option value="Patient" selected>Patient - I need healthcare services</option>
+                            <option value="Doctor">Doctor - I provide healthcare services</option>
+                        </select>
+                        <span asp-validation-for="Role" class="text-danger small mt-1 d-block"></span>
+                    </div>
+
+                    <!-- Terms & Conditions -->
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="terms" required />
+                        <label class="form-check-label" for="terms">
+                            I agree to the Terms &amp; Conditions and Privacy Policy
+                        </label>
+                    </div>
+
+                    <!-- Register Button -->
+                    <button type="submit" class="btn btn-success btn-lg w-100 mb-3">
+                        <i class="bi bi-person-check me-2"></i>Create Account
+                    </button>
+
+                    <!-- Login Link -->
+                    <p class="text-center text-muted mb-0">
+                        Already registered? <a asp-action="Login" class="text-decoration-none fw-bold" style="color: var(--accent);">Sign in</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,122 @@
+@model SmartHospital.MVC.Models.ViewModels.LoginViewModel
+@{
+    Layout = null;
+    ViewData["Title"] = "Login";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login – Smart Hospital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    <link rel="stylesheet" href="~/css/site.css"/>
+</head>
+<body>
+<div class="auth-wrapper">
+    <div class="auth-left">
+        <div>
+            <div class="auth-logo">
+                <i class="bi bi-heart-pulse-fill" style="color:#4ecdc4"></i> SmartHospital
+            </div>
+            <p class="auth-tagline">Your health is our priority.<br>Connecting patients & doctors seamlessly.</p>
+            <div class="mt-5 d-flex gap-4" style="opacity:0.7;font-size:0.85rem;">
+                <div><i class="bi bi-shield-check"></i> Secure & Private</div>
+                <div><i class="bi bi-clock"></i> 24/7 Access</div>
+                <div><i class="bi bi-people"></i> Multi-Role</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="auth-right">
+        <div class="auth-form">
+            <h2 style="font-family:'DM Serif Display',serif;font-size:1.8rem;margin-bottom:4px;">Welcome back</h2>
+            <p style="color:#6b7a8d;font-size:0.9rem;margin-bottom:28px;">Sign in to your account</p>
+
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success py-2 mb-3 rounded-3"><i class="bi bi-check-circle me-2"></i>@TempData["Success"]</div>
+            }
+
+            <form asp-action="Login" asp-controller="Auth" method="post" novalidate id="loginForm">
+                @Html.AntiForgeryToken()
+                <input type="hidden" asp-for="ReturnUrl"/>
+
+                <div asp-validation-summary="All" class="alert alert-danger py-2 mb-3 rounded-3" style="font-size:0.85rem;display:none;" id="validationSummary"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label"></label>
+                    <div class="input-group">
+                        <span class="input-group-text" style="background:#f8f9fa;border-right:none;border-color:#dde4e2;">
+                            <i class="bi bi-envelope" style="color:#6b7a8d;"></i>
+                        </span>
+                        <input asp-for="Email" class="form-control" placeholder="doctor@hospital.com" autocomplete="email" style="border-left:none;"/>
+                    </div>
+                    <span asp-validation-for="Email" class="field-validation-error"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label asp-for="Password" class="form-label"></label>
+                    <div class="input-group">
+                        <span class="input-group-text" style="background:#f8f9fa;border-right:none;border-color:#dde4e2;">
+                            <i class="bi bi-lock" style="color:#6b7a8d;"></i>
+                        </span>
+                        <input asp-for="Password" class="form-control" type="password" placeholder="Your password" id="loginPassword" style="border-left:none;border-right:none;"/>
+                        <button type="button" class="input-group-text" style="background:#f8f9fa;border-left:none;border-color:#dde4e2;cursor:pointer;" onclick="togglePwd('loginPassword',this)">
+                            <i class="bi bi-eye" style="color:#6b7a8d;"></i>
+                        </button>
+                    </div>
+                    <span asp-validation-for="Password" class="field-validation-error"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100 py-2" id="loginBtn">
+                    <span id="loginBtnText"><i class="bi bi-box-arrow-in-right me-2"></i>Sign In</span>
+                    <span id="loginSpinner" class="d-none"><span class="spinner-border spinner-border-sm me-2"></span>Signing in...</span>
+                </button>
+            </form>
+
+            <hr class="my-4" style="border-color:#dde4e2;"/>
+            <p class="text-center" style="font-size:0.88rem;color:#6b7a8d;">
+                Don't have an account?
+                <a asp-controller="Auth" asp-action="Register" style="color:var(--primary);font-weight:600;">Register here</a>
+            </p>
+
+            <div style="margin-top:24px;padding:16px;background:#f0f4ff;border-radius:8px;text-align:center;border-left:4px solid #667eea;">
+                <i class="bi bi-shield-lock" style="color:#667eea;font-size:1.2rem;"></i>
+                <p style="font-size:0.88rem;color:#6b7a8d;margin-bottom:8px;margin-top:8px;">Administrator?</p>
+                <a asp-controller="Auth" asp-action="AdminLogin" class="btn btn-sm" style="background-color:#667eea;color:white;border:none;">
+                    <i class="bi bi-shield me-1"></i>Admin Login
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation-unobtrusive@4.0.0/dist/jquery.validate.unobtrusive.min.js"></script>
+<script>
+function togglePwd(id, btn) {
+    const inp = document.getElementById(id);
+    const icon = btn.querySelector('i');
+    if (inp.type === 'password') { inp.type = 'text'; icon.className = 'bi bi-eye-slash'; }
+    else { inp.type = 'password'; icon.className = 'bi bi-eye'; }
+}
+
+$('#loginForm').on('submit', function(e) {
+    if ($(this).valid()) {
+        $('#loginBtnText').addClass('d-none');
+        $('#loginSpinner').removeClass('d-none');
+        $('#loginBtn').prop('disabled', true);
+    }
+});
+
+// Show validation summary if errors
+if ($('.field-validation-error:not(:empty)').length) {
+    $('#validationSummary').show();
+}
+</script>
+</body>
+</html>

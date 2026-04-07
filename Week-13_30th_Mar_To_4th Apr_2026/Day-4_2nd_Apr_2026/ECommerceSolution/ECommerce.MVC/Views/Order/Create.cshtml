@@ -1,0 +1,13 @@
+@model ECommerce.MVC.Models.Order
+
+<h2>Place Order</h2>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color:red">@ViewBag.Error</p>
+}
+
+<form method="post">
+    <input asp-for="UserId" placeholder="Enter User Id" />
+    <button type="submit">Place Order</button>
+</form>
